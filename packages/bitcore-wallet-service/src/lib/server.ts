@@ -14,7 +14,7 @@ import { Storage } from './storage';
 const $ = require('preconditions').singleton();
 const deprecatedServerMessage = require('../deprecated-serverMessages');
 const serverMessages = require('../serverMessages');
-const BCHAddressTranslator = require('./bchaddresstranslator');
+const DVTAddressTranslator = require('./bchaddresstranslator');
 
 log.debug = log.verbose;
 log.disableColor();
@@ -1356,7 +1356,7 @@ export class WalletService {
               }
 
               if (wallet.coin == 'bch' && opts.noCashAddr) {
-                address.address = BCHAddressTranslator.translate(
+                address.address = DVTAddressTranslator.translate(
                   address.address,
                   'copay'
                 );
@@ -2746,7 +2746,7 @@ export class WalletService {
 
                   if (txp.coin == 'bch') {
                     if (opts.noCashAddr && txp.changeAddress) {
-                      txp.changeAddress.address = BCHAddressTranslator.translate(
+                      txp.changeAddress.address = DVTAddressTranslator.translate(
                         txp.changeAddress.address,
                         'copay'
                       );
@@ -2853,7 +2853,7 @@ export class WalletService {
                 this._notifyTxProposalAction('NewTxProposal', txp, () => {
                   if (opts.noCashAddr && txp.coin == 'bch') {
                     if (txp.changeAddress) {
-                      txp.changeAddress.address = BCHAddressTranslator.translate(
+                      txp.changeAddress.address = DVTAddressTranslator.translate(
                         txp.changeAddress.address,
                         'copay'
                       );
@@ -3326,14 +3326,14 @@ export class WalletService {
           if (opts.noCashAddr && txps[0] && txps[0].coin == 'bch') {
             _.each(txps, x => {
               if (x.changeAddress) {
-                x.changeAddress.address = BCHAddressTranslator.translate(
+                x.changeAddress.address = DVTAddressTranslator.translate(
                   x.changeAddress.address,
                   'copay'
                 );
               }
               _.each(x.outputs, x => {
                 if (x.toAddress) {
-                  x.toAddress = BCHAddressTranslator.translate(
+                  x.toAddress = DVTAddressTranslator.translate(
                     x.toAddress,
                     'copay'
                   );

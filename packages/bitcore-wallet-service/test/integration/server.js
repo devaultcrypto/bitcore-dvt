@@ -28,7 +28,7 @@ var Constants = Common.Constants;
 var Defaults = Common.Defaults;
 
 var Model = require('../../ts_build/lib/model');
-var BCHAddressTranslator = require('../../ts_build/lib/bchaddresstranslator');
+var DVTAddressTranslator = require('../../ts_build/lib/bchaddresstranslator');
 
 var HugeTxs = require('./hugetx');
 var TestData = require('../testdata');
@@ -4496,7 +4496,7 @@ describe('Wallet service', function() {
     it('should create a BCH tx proposal with cashaddr outputs (w/o prefix) and return Copay addr', function(done) {
 
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',
@@ -4551,7 +4551,7 @@ describe('Wallet service', function() {
     it('should create a BCH tx proposal with cashaddr outputs (w/ prefix) and return Copay addr', function(done) {
 
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',
@@ -4608,7 +4608,7 @@ describe('Wallet service', function() {
     it('should create a BCH tx proposal with cashaddr and keep message', function(done) {
 
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',
@@ -4667,7 +4667,7 @@ describe('Wallet service', function() {
   describe("cashAddr edge cases (v3 api)", (x) => {
     it('should fail to create BCH tx proposal with cashaddr w/prefix', function(done) {
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',
@@ -4691,7 +4691,7 @@ describe('Wallet service', function() {
     });
     it('should fail to create BCH tx proposal with  legacy addr  ', function(done) {
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',
@@ -4716,7 +4716,7 @@ describe('Wallet service', function() {
 
     it('should allow cashaddr on change address', function(done) {
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',
@@ -4746,7 +4746,7 @@ describe('Wallet service', function() {
 
     it('should not allow cashaddr w prefix on change address', function(done) {
       let copayAddr = 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X';
-      let cashAddr = BCHAddressTranslator.translate(copayAddr, 'cashaddr');
+      let cashAddr = DVTAddressTranslator.translate(copayAddr, 'cashaddr');
       let amount = 0.8 * 1e8;
       helpers.createAndJoinWallet(1, 1, {
         coin: 'bch',

@@ -4,7 +4,7 @@ import { Db } from 'mongodb';
 import * as mongodb from 'mongodb';
 import { Address, Email, Notification, Preferences, PushNotificationSub, Session, TxConfirmationSub, TxNote, TxProposal, Wallet } from './model';
 
-const BCHAddressTranslator = require('./bchaddresstranslator'); // only for migration
+const DVTAddressTranslator = require('./bchaddresstranslator'); // only for migration
 const $ = require('preconditions').singleton();
 let log = require('npmlog');
 log.debug = log.verbose;
@@ -571,7 +571,7 @@ export class Storage {
       cursor.pause();
       let x;
       try {
-        x = BCHAddressTranslator.translate(doc.address, 'cashaddr');
+        x = DVTAddressTranslator.translate(doc.address, 'cashaddr');
       } catch (e) {
         return cb(e);
       }
@@ -1437,7 +1437,7 @@ export class Storage {
 
           // TODO remove on native cashaddr
           if (bch) {
-            addr = BCHAddressTranslator.translate(addr, 'cashaddr', 'copay');
+            addr = DVTAddressTranslator.translate(addr, 'cashaddr', 'copay');
             $.checkState(
               addr,
               'ERROR: wrong addr format on DB for wallet:' + walletId

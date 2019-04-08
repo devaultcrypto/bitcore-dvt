@@ -1,7 +1,7 @@
 import { BTCStateProvider } from '../btc/btc';
 import { CSP } from '../../../types/namespaces/ChainStateProvider';
 
-export class BCHStateProvider extends BTCStateProvider {
+export class DVTStateProvider extends BTCStateProvider {
   constructor(chain: string = 'DVT') {
     super(chain);
   }

@@ -2,7 +2,7 @@ var $ = require('preconditions').singleton();
 var _ = require('lodash');
 
 var Bitcore = require('bitcore-lib');
-var BCHAddress = require('bitcore-lib-dvt').Address;
+var DVTAddress = require('bitcore-lib-dvt').Address;
 
 var Common = require('./common');
 var Utils = Common.Utils;
@@ -190,7 +190,7 @@ Verifier.checkPaypro = function(txp, payproOpts) {
     return false;
 
   // To circunvent cashaddr/legacy address problems...
-  if (txp.coin == 'bch' && (new BCHAddress(toAddress).toString()) != (new BCHAddress(payproOpts.toAddress).toString())) 
+  if (txp.coin == 'bch' && (new DVTAddress(toAddress).toString()) != (new DVTAddress(payproOpts.toAddress).toString())) 
     return false;
 
 // this generates problems...

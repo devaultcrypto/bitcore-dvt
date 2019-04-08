@@ -4,7 +4,7 @@ const Bitcore_ = {
   dvt: require('bitcore-lib-dvt')
 };
 
-export class BCHAddressTranslator {
+export class DVTAddressTranslator {
   static getAddressCoin(address) {
     try {
       new Bitcore_['btc'].Address(address);
@@ -27,7 +27,7 @@ export class BCHAddressTranslator {
       wasArray = false;
       addresses = [addresses];
     }
-    from = from || BCHAddressTranslator.getAddressCoin(addresses[0]);
+    from = from || DVTAddressTranslator.getAddressCoin(addresses[0]);
 
     let ret;
     if (from == to) {
@@ -59,4 +59,4 @@ export class BCHAddressTranslator {
   }
 }
 
-module.exports = BCHAddressTranslator;
+module.exports = DVTAddressTranslator;
