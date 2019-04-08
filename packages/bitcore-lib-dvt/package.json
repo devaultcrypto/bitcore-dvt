@@ -2,7 +2,7 @@
   "name": "bitcore-lib-dvt",
   "version": "8.1.1",
   "description": "A pure and powerful JavaScript DeVault library.",
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "Proteus <pro@devault.cc>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -13,6 +13,7 @@
   },
   "keywords": [
     "bitcoin",
+    "devault",
     "transaction",
     "address",
     "p2p",
@@ -29,7 +30,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore-lib/tree/cash"
+    "url": "https://github.com/proteanx/bitcore-lib-dvt"
   },
   "browser": {
     "request": "browser-request"
