@@ -83,7 +83,7 @@ exports.payProJsonBody = body = {
 
 exports.payProJson = {
   'dvt': {
-    body: Buffer.from(body.bch),
+    body: Buffer.from(body.dvt),
     headers: {
       'x-identity': 'mh65MN7drqmwpCRZcEeBEE9ceQCQ95HtZc',
       signature: '3a1c2dae616038003ab66490c7173f95daf863933258cd0163d59a9f15d797b06715ce4c9ecf7688b4220d9c13079ec9e9b8399ca5e8b162e3216b8512f84e3d',

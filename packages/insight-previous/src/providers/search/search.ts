@@ -107,7 +107,7 @@ export class SearchProvider {
 
   private extractAddress(address: string): string {
     const extractedAddress = address
-      .replace(/^(bitcoincash:|bchtest:|bitcoin:)/i, '')
+      .replace(/^(devault:|dvtest:|bitcoin:)/i, '')
       .replace(/\?.*/, '');
     return extractedAddress || address;
   }

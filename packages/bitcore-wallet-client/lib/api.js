@@ -1047,7 +1047,7 @@ API.prototype._checkKeyDerivation = function() {
  * @param {Number} m
  * @param {Number} n
  * @param {object} opts (optional: advanced options)
- * @param {string} opts.coin[='btc'] - The coin for this wallet (btc, bch).
+ * @param {string} opts.coin[='btc'] - The coin for this wallet (btc, dvt).
  * @param {string} opts.network[='livenet']
  * @param {string} opts.singleAddress[=false] - The wallet will only ever have one address.
  * @param {String} opts.walletPrivKey - set a walletPrivKey (instead of random)
@@ -1126,7 +1126,7 @@ API.prototype.createWallet = function(walletName, copayerName, m, n, opts, cb) {
  * @param {String} secret
  * @param {String} copayerName
  * @param {Object} opts
- * @param {string} opts.coin[='btc'] - The expected coin for this wallet (btc, bch).
+ * @param {string} opts.coin[='btc'] - The expected coin for this wallet (btc, dvt).
  * @param {Boolean} opts.dryRun[=false] - Simulate wallet join
  * @param {Callback} cb
  * @returns {Callback} cb - Returns the wallet

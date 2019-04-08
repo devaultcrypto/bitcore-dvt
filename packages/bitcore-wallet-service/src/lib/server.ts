@@ -454,7 +454,7 @@ export class WalletService {
    * @param {number} opts.n - Total copayers.
    * @param {string} opts.pubKey - Public key to verify copayers joining have access to the wallet secret.
    * @param {string} opts.singleAddress[=false] - The wallet will only ever have one address.
-   * @param {string} opts.coin[='btc'] - The coin for this wallet (btc, bch).
+   * @param {string} opts.coin[='btc'] - The coin for this wallet (btc, dvt).
    * @param {string} opts.network[='livenet'] - The Bitcoin network for this wallet.
    * @param {string} opts.supportBIP44AndP2PKH[=true] - Client supports BIP44 & P2PKH for new wallets.
    */
@@ -1016,7 +1016,7 @@ export class WalletService {
    * Joins a wallet in creation.
    * @param {Object} opts
    * @param {string} opts.walletId - The wallet id.
-   * @param {string} opts.coin[='btc'] - The expected coin for this wallet (btc, bch).
+   * @param {string} opts.coin[='btc'] - The expected coin for this wallet (btc, dvt).
    * @param {string} opts.name - The copayer name.
    * @param {string} opts.xPubKey - Extended Public Key for this copayer.
    * @param {string} opts.requestPubKey - Public Key used to check requests from this copayer.

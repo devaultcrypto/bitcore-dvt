@@ -2793,13 +2793,13 @@ describe('Wallet service', function() {
     },
     {
       coin: 'dvt',
-      key: 'id44bch',
+      key: 'id44dvt',
       addr: 'qpgjyj728rhu4gca2dqfzlpl8acnhzequshhgvev53',
       flags: {},
     },
     {
       coin: 'dvt',
-      key: 'id44bch',
+      key: 'id44dvt',
       addr: 'CPrtPWbp8cCftTQu5fzuLG5zPJNDHMMf8X',
       flags: { noCashAddr: true },
     },
@@ -4559,7 +4559,7 @@ describe('Wallet service', function() {
         helpers.stubUtxos(s, w, [1, 2], function() {
           var txOpts = {
             outputs: [{
-              toAddress: 'bitcoincash:' + cashAddr,
+              toAddress: 'devault:' + cashAddr,
               amount: amount,
             }],
             message: 'some message',
@@ -4579,7 +4579,7 @@ describe('Wallet service', function() {
             tx.isPending().should.equal.true;
             tx.isTemporary().should.equal.true;
             tx.outputs.should.deep.equal([{
-              toAddress: 'bitcoincash:' + cashAddr,
+              toAddress: 'devault:' + cashAddr,
               amount: amount,
             }]);
             tx.amount.should.equal(helpers.toSatoshi(0.8));
@@ -4675,7 +4675,7 @@ describe('Wallet service', function() {
         helpers.stubUtxos(s, w, [1, 2], function() {
           var txOpts = {
             outputs: [{
-              toAddress: 'bitcoincash:' + cashAddr,
+              toAddress: 'devault:' + cashAddr,
               amount: amount,
             }],
             message: 'some message',
@@ -4761,7 +4761,7 @@ describe('Wallet service', function() {
               message: 'some message',
               customData: 'some custom data',
               feePerKb: 123e2,
-              changeAddress: 'bitcoincash:' + changeAddress[0].address,
+              changeAddress: 'devault:' + changeAddress[0].address,
             };
             s.createTx(txOpts, function(err, tx) {
               err.message.should.contain('wo prefix');
@@ -7773,9 +7773,9 @@ describe('Wallet service', function() {
         helpers.createAndJoinWallet(1, 1, {
           coin: 'dvt'
         }, function(s, w) {
-          server.bch = s;
-          wallet.bch = w;
-          w.copayers[0].id.should.equal(TestData.copayers[0].id44bch);
+          server.dvt = s;
+          wallet.dvt = w;
+          w.copayers[0].id.should.equal(TestData.copayers[0].id44dvt);
           done();
         });
       });

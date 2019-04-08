@@ -1423,7 +1423,7 @@ export class Storage {
   }
 
   walletCheck = async params => {
-    const { walletId, bch } = params;
+    const { walletId, dvt } = params;
 
     return new Promise(resolve => {
       const addressStream = this.db

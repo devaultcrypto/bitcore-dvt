@@ -49,13 +49,13 @@ describe('paypro', function() {
       should.not.exist(err);
       res.should.be.deep.equal({
         "amount": 769200,
-        "coin": "bch",
+        "coin": "dvt",
         "expires": "2019-03-07T18:20:44.301Z",
         "memo": "Payment request for BitPay invoice 3oZcpotopVGcZ2stRw2dop for merchant GusPay",
         "network": "testnet",
         "paymentId": "3oZcpotopVGcZ2stRw2dop",
         "requiredFeeRate": 1.398,
-        "toAddress": "bchtest:qz78y0832kskq84rr4f9t22fequ5c0l4gu6wsehezr",
+        "toAddress": "dvttest:qz78y0832kskq84rr4f9t22fequ5c0l4gu6wsehezr",
         "verified": true,
       });
       done();

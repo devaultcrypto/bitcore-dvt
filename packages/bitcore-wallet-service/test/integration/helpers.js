@@ -153,7 +153,7 @@ helpers._generateCopayersTestData = function() {
     var xpriv_44H_0H_0H = xpriv.deriveChild(44, true).deriveChild(0, true).deriveChild(0, true);
     var xpub_44H_0H_0H = Bitcore.HDPublicKey(xpriv_44H_0H_0H);
     var id44btc = Model.Copayer._xPubToCopayerId('btc', xpub_44H_0H_0H.toString());
-    var id44bch = Model.Copayer._xPubToCopayerId('dvt', xpub_44H_0H_0H.toString());
+    var id44dvt = Model.Copayer._xPubToCopayerId('dvt', xpub_44H_0H_0H.toString());
 
     var xpriv_1H = xpriv.deriveChild(1, true);
     var xpub_1H = Bitcore.HDPublicKey(xpriv_1H);
@@ -161,7 +161,7 @@ helpers._generateCopayersTestData = function() {
     var pub = xpub_1H.deriveChild(0).publicKey;
 
     console.log('{id44btc: ', "'" + id44btc + "',");
-    console.log('id44dvt: ', "'" + id44bch + "',");
+    console.log('id44dvt: ', "'" + id44dvt + "',");
     console.log('id45: ', "'" + id45 + "',");
     console.log('xPrivKey: ', "'" + xpriv.toString() + "',");
     console.log('xPubKey: ', "'" + xpub.toString() + "',");
