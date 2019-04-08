@@ -2,7 +2,7 @@ export const Paths = {
   BTC: {
     mainnet: `m/44'/0'/0'`
   },
-  BCH: {
+  DVT: {
     mainnet: `m/44'/145'/0'`
   },
   ETH: {

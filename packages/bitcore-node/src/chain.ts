@@ -3,7 +3,7 @@ module.exports = {
     lib: require('bitcore-lib'),
     p2p: require('bitcore-p2p'),
   },
-  BCH: {
+  DVT: {
     lib: require('bitcore-lib-dvt'),
     p2p: require('bitcore-p2p-dvt'),
   },

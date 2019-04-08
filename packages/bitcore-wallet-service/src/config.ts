@@ -40,7 +40,7 @@ module.exports = {
         regtestEnabled: false
       },
     },
-    bch: {
+    dvt: {
       livenet: {
         url: 'https://api.bitcore.io',
       },
@@ -78,7 +78,7 @@ module.exports = {
   //      livenet: 'https://insight.bitpay.com/tx/{{txid}}',
   //      testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
   //    },
-  //    bch: {
+  //    dvt: {
   //      livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
   //      testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
   //    }

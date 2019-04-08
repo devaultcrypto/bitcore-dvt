@@ -8,7 +8,7 @@ var events = require('events');
 var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt'),
+  dvt: require('bitcore-lib-dvt'),
 };
 var Mnemonic = require('bitcore-mnemonic');
 var sjcl = require('sjcl');

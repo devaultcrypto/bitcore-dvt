@@ -17,7 +17,7 @@ var config = require('./test-config');
 var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt'),
+  dvt: require('bitcore-lib-dvt'),
 };
 
 var BWS = require('bitcore-wallet-service');
@@ -2783,7 +2783,7 @@ describe('client API', function() {
 
     });
 
-    describe('BCH', function(done) {
+    describe('DVT', function(done) {
       beforeEach(function(done) {
         setup(1, 1, 'bch', 'livenet', done);
       });
@@ -5427,7 +5427,7 @@ describe('client API', function() {
 
   var addrMap = {
     btc: ['1PuKMvRFfwbLXyEPXZzkGi111gMUCs6uE3','1GG3JQikGC7wxstyavUBDoCJ66bWLLENZC'],
-    bch: ['CfNCvxmKYzZsS78pDKKfrDd2doZt3w4jUs','CXivsT4p9F6Us1oQGfo6oJpKiDovJjRVUE']
+    dvt: ['CfNCvxmKYzZsS78pDKKfrDd2doZt3w4jUs','CXivsT4p9F6Us1oQGfo6oJpKiDovJjRVUE']
   };
   _.each(['bch', 'btc'], function(coin) {
     var addr= addrMap[coin];

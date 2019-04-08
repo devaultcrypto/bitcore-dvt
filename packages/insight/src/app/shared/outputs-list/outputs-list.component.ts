@@ -23,7 +23,7 @@ export class OutputsListComponent implements OnInit {
   @Input()
   txHash$: Observable<string>;
   @Input()
-  displayValueCode = 'BCH';
+  displayValueCode = 'DVT';
   outputs$: Observable<CoinJSON[]>;
 
   constructor(private apiService: ApiService) {}

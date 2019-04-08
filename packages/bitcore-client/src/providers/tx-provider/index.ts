@@ -4,7 +4,7 @@ import { ETHTxProvider } from './eth';
 
 const providers = {
   BTC: new BTCTxProvider(),
-  BCH: new BCHTxProvider(),
+  DVT: new BCHTxProvider(),
   ETH: new ETHTxProvider()
 };
 

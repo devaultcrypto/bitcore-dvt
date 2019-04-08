@@ -1,5 +1,5 @@
-export type Protocol = 'BTC' | 'BCH';
-export type Code = 'BTC' | 'BCH' | 'tBTC' | 'tBCH';
+export type Protocol = 'BTC' | 'DVT';
+export type Code = 'BTC' | 'DVT' | 'tBTC' | 'tBCH';
 export type Network = 'mainnet' | 'testnet' | 'regtest';
 
 export interface Chain {
@@ -9,18 +9,18 @@ export interface Chain {
   protocol: Protocol;
 }
 
-export const BCH: Chain = {
-  code: 'BCH',
+export const DVT: Chain = {
+  code: 'DVT',
   name: 'Bitcoin Cash',
   network: 'mainnet',
-  protocol: 'BCH'
+  protocol: 'DVT'
 };
 
-export const tBCH: Chain = {
+export const tDVT: Chain = {
   code: 'tBCH',
   name: 'Bitcoin Cash Testnet',
   network: 'testnet',
-  protocol: 'BCH'
+  protocol: 'DVT'
 };
 
 export const BTC: Chain = {

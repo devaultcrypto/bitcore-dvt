@@ -7,7 +7,7 @@ import { Chain } from '../../types/ChainNetwork';
 
 const services: CSP.ChainStateServices = {
   BTC: new BTCStateProvider(),
-  BCH: new BCHStateProvider(),
+  DVT: new BCHStateProvider(),
   ETH: new ETHStateProvider(),
   BAT: new BATStateProvider()
 };

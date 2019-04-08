@@ -13,7 +13,7 @@ log.level = 'info';
 var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt')
+  dvt: require('bitcore-lib-dvt')
 };
 
 var Common = require('../../ts_build/lib/common');

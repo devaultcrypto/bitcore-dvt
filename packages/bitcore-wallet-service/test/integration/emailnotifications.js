@@ -63,7 +63,7 @@ describe('Email notifications', function() {
                     livenet: 'https://insight.bitpay.com/tx/{{txid}}',
                     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
                   },
-                  bch: {
+                  dvt: {
                     livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
                     testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
                   }
@@ -151,7 +151,7 @@ describe('Email notifications', function() {
                     livenet: 'https://insight.bitpay.com/tx/{{txid}}',
                     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
                   },
-                  bch: {
+                  dvt: {
                     livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
                     testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
                   }
@@ -653,7 +653,7 @@ describe('Email notifications', function() {
                     livenet: 'https://insight.bitpay.com/tx/{{txid}}',
                     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
                   },
-                  bch: {
+                  dvt: {
                     livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
                     testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
                   }

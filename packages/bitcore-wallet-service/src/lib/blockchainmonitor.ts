@@ -29,7 +29,7 @@ export class BlockchainMonitor {
         (done) => {
           this.explorers = {
             btc: {},
-            bch: {}
+            dvt: {}
           };
 
           const coinNetworkPairs = [];

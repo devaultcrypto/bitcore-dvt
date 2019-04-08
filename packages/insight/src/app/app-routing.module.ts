@@ -28,7 +28,7 @@ import {
  * `coins.find({address: {$gt: '1JasonD', $lt: '1JasonE'} })`. The same first
  * bits search is also easy for transaction hashes and block hashes.
  *
- * E.g. `/BCH/search/1JasonD` – should be a search listing showing at least 1
+ * E.g. `/DVT/search/1JasonD` – should be a search listing showing at least 1
  * address: `1JasonDm4iqi3TJwgpHKSJYfewJBtKewxP` and at least 4 transactions:
  * `43bab209c68f3f7334e38a681b007127af5df0d169e998e9e0dd46cb7ab7f783` – mints to a matching address
  * `9871be1cfff51d1180ed3069326f83927503e785a015b8ecd4054a8300068b78` - spends from a matching address

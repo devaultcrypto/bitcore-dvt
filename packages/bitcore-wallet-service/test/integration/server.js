@@ -15,7 +15,7 @@ var config = require('../test-config');
 var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt')
+  dvt: require('bitcore-lib-dvt')
 };
 
 
@@ -1529,7 +1529,7 @@ describe('Wallet service', function() {
     });
 
 
-    describe('1-1 wallet (BIP44/BCH/Testnet)', function() {
+    describe('1-1 wallet (BIP44/DVT/Testnet)', function() {
       beforeEach(function(done) {
         helpers.createAndJoinWallet(1, 1, {
           coin: 'bch',

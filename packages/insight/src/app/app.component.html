@@ -78,9 +78,9 @@
               <ion-label>Display Currency</ion-label>
             </ion-item-divider>
             <ion-item
-              (click)="config.displayValueCode$.next('BCH')"
+              (click)="config.displayValueCode$.next('DVT')"
               [ngClass]="{
-                active: (config.displayValueCode$ | async) === 'BCH'
+                active: (config.displayValueCode$ | async) === 'DVT'
               }"
             >
               <ion-label>BCH</ion-label>

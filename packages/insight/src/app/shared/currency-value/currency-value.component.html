@@ -2,7 +2,7 @@
     <ng-container *ngIf="result.value !== undefined; else rateNotAvailable">
         <ng-container *ngIf="result.approximation">≈</ng-container>
         <ng-container ngSwitch="{{result.unit}}">
-            <ng-container *ngSwitchCase="'BCH'">{{result.value | number:'1.0-8'}} BCH</ng-container>
+            <ng-container *ngSwitchCase="'DVT'">{{result.value | number:'1.0-8'}} BCH</ng-container>
             <ng-container *ngSwitchCase="'BCH_bits'">
                 {{result.value | number:'1.0-2'}} {{result.value === 1? 'bit' : 'bits'}} (BCH)
             </ng-container>

@@ -21,7 +21,7 @@ export interface IDeriver {
 
 const derivers: { [chain: string]: IDeriver } = {
   BTC: new BtcDeriver(),
-  BCH: new BchDeriver(),
+  DVT: new BchDeriver(),
   ETH: new EthDeriver()
 };
 
@@ -29,7 +29,7 @@ const paths = {
   BTC: {
     mainnet: `m/44'/0'/0'`
   },
-  BCH: {
+  DVT: {
     mainnet: `m/44'/145'/0'`
   },
   ETH: {

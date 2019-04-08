@@ -26,7 +26,7 @@ export class TransactionListComponent implements OnInit {
   @Input()
   query$: Observable<StreamingFindOptions<TransactionJSON>>;
   @Input()
-  displayValueCode = 'BCH';
+  displayValueCode = 'DVT';
   transactions$: Observable<TransactionJSON>;
 
   constructor(private apiService: ApiService) {}

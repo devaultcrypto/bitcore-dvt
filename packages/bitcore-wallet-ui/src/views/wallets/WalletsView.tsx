@@ -133,7 +133,7 @@ class WalletsContainer extends Component<Props, State> {
   walletCreateComponent = () => {
     const options = [
       { key: 'BTC', text: 'Bitcoin', value: 'BTC' },
-      { key: 'BCH', text: 'Bitcoin Cash', value: 'BCH' },
+      { key: 'DVT', text: 'Bitcoin Cash', value: 'DVT' },
       { key: 'ETH', text: 'Ethereum', value: 'ETH' }
     ];
     const chainNetworks: {
@@ -144,7 +144,7 @@ class WalletsContainer extends Component<Props, State> {
         { key: 'testnet', text: 'Testnet', value: 'testnet' },
         { key: 'regtest', text: 'Regtest', value: 'regtest' }
       ],
-      BCH: [
+      DVT: [
         { key: 'mainnet', text: 'Mainnet', value: 'mainnet' },
         { key: 'testnet', text: 'Testnet', value: 'testnet' },
         { key: 'regtest', text: 'Regtest', value: 'regtest' }

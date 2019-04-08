@@ -12,7 +12,7 @@ const BCHAddressTranslator = require('../bchaddresstranslator');
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt')
+  dvt: require('bitcore-lib-dvt')
 };
 const config = require('../../config');
 const Constants = Common.Constants,

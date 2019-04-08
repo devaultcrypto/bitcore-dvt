@@ -17,7 +17,7 @@ var config = require('../test-config');
 var Bitcore = require('bitcore-lib');
 var Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt')
+  dvt: require('bitcore-lib-dvt')
 };
 
 var Common = require('../../ts_build/lib/common');
@@ -161,7 +161,7 @@ helpers._generateCopayersTestData = function() {
     var pub = xpub_1H.deriveChild(0).publicKey;
 
     console.log('{id44btc: ', "'" + id44btc + "',");
-    console.log('id44bch: ', "'" + id44bch + "',");
+    console.log('id44dvt: ', "'" + id44bch + "',");
     console.log('id45: ', "'" + id45 + "',");
     console.log('xPrivKey: ', "'" + xpriv.toString() + "',");
     console.log('xPubKey: ', "'" + xpub.toString() + "',");
@@ -427,7 +427,7 @@ helpers.stubHistoryV8 = function(nr, bcHeight, txs) {
 
 
 helpers.stubCheckData = function(bc, server, isBCH, cb) {
-  server.storage.walletCheck({walletId:server.walletId, bch: isBCH}).then((x) => {
+  server.storage.walletCheck({walletId:server.walletId, dvt: isBCH}).then((x) => {
     bc.getCheckData = sinon.stub().callsArgWith(1, null, {sum: x.sum});
     return cb();
   });

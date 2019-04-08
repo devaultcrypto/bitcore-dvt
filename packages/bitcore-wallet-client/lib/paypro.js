@@ -5,7 +5,7 @@ var Bitcore = require('bitcore-lib');
 const Errors = require('./errors');
 var Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt'),
+  dvt: require('bitcore-lib-dvt'),
 };
 const request = require('request');
 const JSON_PAYMENT_REQUEST_CONTENT_TYPE = 'application/payment-request';

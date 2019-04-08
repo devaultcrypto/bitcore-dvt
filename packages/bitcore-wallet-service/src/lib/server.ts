@@ -25,7 +25,7 @@ const EmailValidator = require('email-validator');
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
-  bch: require('bitcore-lib-dvt')
+  dvt: require('bitcore-lib-dvt')
 };
 
 const Common = require('./common');
@@ -3649,7 +3649,7 @@ export class WalletService {
 
       // TODO remove on native bch addr
       this.storage
-        .walletCheck({ walletId: wallet.id, bch: wallet.coin == 'bch' })
+        .walletCheck({ walletId: wallet.id, dvt: wallet.coin == 'bch' })
         .then((localCheck: { sum: number }) => {
           bc.getCheckData(wallet, (err, serverCheck) => {
             // If there is an error, just ignore it (server does not support walletCheck)

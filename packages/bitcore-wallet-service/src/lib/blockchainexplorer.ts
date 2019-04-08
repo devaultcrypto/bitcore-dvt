@@ -13,7 +13,7 @@ const PROVIDERS = {
       livenet: 'https://api.bitpay.com',
       testnet: 'https://api.bitpay.com'
     },
-    bch: {
+    dvt: {
       livenet: 'https://api.bitpay.com',
       testnet: 'https://api.bitpay.com'
     }

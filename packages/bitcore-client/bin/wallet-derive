@@ -2,7 +2,7 @@
 
 const bitcoreLibs = {
   BTC: require('bitcore-lib'),
-  BCH: require('bitcore-lib-dvt')
+  DVT: require('bitcore-lib-dvt')
 };
 const program = require('../ts_build/program');
 const { Wallet } = require('../ts_build/wallet');

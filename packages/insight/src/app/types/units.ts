@@ -36,8 +36,8 @@ export const BTCDenomination = generateBitcoinDenomination(BTC);
 export const tBTCDenomination = generateBitcoinDenomination(tBTC);
 
 export const ChainDenominations = {
-  BCH: BCHDenomination,
-  tBCH: tBCHDenomination,
+  DVT: BCHDenomination,
+  tDVT: tBCHDenomination,
   BTC: BTCDenomination,
   tBTC: tBTCDenomination
 };

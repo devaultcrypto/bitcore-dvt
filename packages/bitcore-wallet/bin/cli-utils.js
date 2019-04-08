@@ -266,7 +266,7 @@ Utils.configureCommander = function(program) {
 };
 
 Utils.COIN = {
-  bch: {
+  dvt: {
     name: 'bch',
     toSatoshis: 100000000,
     maxDecimals: 8,
@@ -284,7 +284,7 @@ Utils.COIN = {
     maxDecimals: 2,
     minDecimals: 2,
   },
-  bch: {
+  dvt: {
     name: 'bch',
     toSatoshis: 100000000,
     maxDecimals: 8,

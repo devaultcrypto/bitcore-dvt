@@ -52,7 +52,7 @@ module.exports = {
         defaultValue: 10000
       }
     ],
-    bch: [
+    dvt: [
       {
         name: 'normal',
         nbBlocks: 2,
