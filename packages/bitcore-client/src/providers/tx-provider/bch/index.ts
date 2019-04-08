@@ -1,5 +1,5 @@
 export class BCHTxProvider {
-  lib = require('bitcore-lib-cash');
+  lib = require('bitcore-lib-dvt');
   create({ recipients, utxos, change, fee }) {
     let tx = new this.lib.Transaction().from(utxos).fee(Number(fee));
     for (const recipient of recipients) {

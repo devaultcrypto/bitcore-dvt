@@ -23,7 +23,7 @@
     "bcrypt": "^2.0.1",
     "bcryptjs": "^2.4.3",
     "bitcore-lib": "^8.1.1",
-    "bitcore-lib-cash": "^8.1.1",
+    "bitcore-lib-dvt": "^8.1.1",
     "bitcore-mnemonic": "^8.1.1",
     "commander": "^2.15.1",
     "elliptic": "^6.4.1",

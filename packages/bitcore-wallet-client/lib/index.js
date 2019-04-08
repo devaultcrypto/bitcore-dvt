@@ -19,4 +19,4 @@ client.sjcl = require('sjcl');
 
 // Expose bitcore
 client.Bitcore = require('bitcore-lib');
-client.BitcoreCash = require('bitcore-lib-cash');
+client.BitcoreCash = require('bitcore-lib-dvt');

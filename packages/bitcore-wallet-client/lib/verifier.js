@@ -2,7 +2,7 @@ var $ = require('preconditions').singleton();
 var _ = require('lodash');
 
 var Bitcore = require('bitcore-lib');
-var BCHAddress = require('bitcore-lib-cash').Address;
+var BCHAddress = require('bitcore-lib-dvt').Address;
 
 var Common = require('./common');
 var Utils = Common.Utils;

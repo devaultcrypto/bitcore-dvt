@@ -13,7 +13,7 @@ import { Logger } from '../../providers/logger/logger';
 import { PriceProvider } from '../../providers/price/price';
 
 import * as bitcoreLib from 'bitcore-lib';
-import * as bitcoreLibCash from 'bitcore-lib-cash';
+import * as bitcoreLibCash from 'bitcore-lib-dvt';
 
 @Injectable()
 @IonicPage({

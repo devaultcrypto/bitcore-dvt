@@ -2,26 +2,23 @@
   "bitcoreNode": {
     "services": {
       "api": {
-        "wallets": {
-          "allowCreationBeforeCompleteSync": true
-        }
       }
     },
     "chains": {
-      "BTC": {
-        "regtest": {
+      "DVT": {
+        "testnet": {
           "chainSource": "p2p",
           "trustedPeers": [
             {
-              "host": "bitcoin",
-              "port": 8332
+              "host": "localhost",
+              "port": 39039
             }
           ],
           "rpc": {
-            "host": "bitcoin",
-            "port": 8333,
-            "username": "bitcorenodetest",
-            "password": "local321"
+            "host": "localhost",
+            "port": 13339,
+            "username": "username",
+            "password": "password"
           }
         }
       }
