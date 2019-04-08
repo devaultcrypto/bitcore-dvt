@@ -4,7 +4,7 @@ import { Db } from 'mongodb';
 import * as mongodb from 'mongodb';
 import { Address, Email, Notification, Preferences, PushNotificationSub, Session, TxConfirmationSub, TxNote, TxProposal, Wallet } from './model';
 
-const DVTAddressTranslator = require('./bchaddresstranslator'); // only for migration
+const DVTAddressTranslator = require('./dvtaddresstranslator'); // only for migration
 const $ = require('preconditions').singleton();
 let log = require('npmlog');
 log.debug = log.verbose;
@@ -1436,7 +1436,7 @@ export class Storage {
           let addr = walletAddress.address;
 
           // TODO remove on native cashaddr
-          if (bch) {
+          if (dvt) {
             addr = DVTAddressTranslator.translate(addr, 'cashaddr', 'copay');
             $.checkState(
               addr,

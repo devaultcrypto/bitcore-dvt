@@ -4,9 +4,9 @@ var _ = require('lodash');
 var chai = require('chai');
 var sinon = require('sinon');
 var should = chai.should();
-var t = require('../ts_build/lib/bchaddresstranslator');
+var t = require('../ts_build/lib/dvtaddresstranslator');
 
-describe('BCH Address translator', function() {
+describe('DVT Address translator', function() {
 
   describe('#getAddressCoin', function() {
     it('should identify btc as coin for 1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA', function() {
@@ -31,7 +31,7 @@ describe('BCH Address translator', function() {
       res.should.equal('36q2G5FMGvJbPgAVEaiyAsFGmpkhPKwk2r');
     });
 
-    it('should keep the address if there is nothing to do (bch)', function() {
+    it('should keep the address if there is nothing to do (dvt)', function() {
       var res = t.translate('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz', 'copay');
       res.should.equal('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz');
     });

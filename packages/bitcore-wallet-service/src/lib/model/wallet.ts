@@ -112,7 +112,7 @@ export class Wallet {
 
     // x.nativeCashAddr opts is only for testing
     x.nativeCashAddr = _.isUndefined(opts.nativeCashAddr)
-      ? x.coin == 'bch'
+      ? x.coin == 'dvt'
         ? true
         : null
       : opts.nativeCashAddr;

@@ -29,7 +29,7 @@ describe('Email notifications', function() {
   describe('1-1 wallet', function() {
     beforeEach(function(done) {
       helpers.beforeEach(function(res) {
-        helpers.createAndJoinWallet(1, 1,  {coin:'bch'}, function(s, w) {
+        helpers.createAndJoinWallet(1, 1,  {coin:'dvt'}, function(s, w) {
           server = s;
           wallet = w;
 
@@ -64,7 +64,7 @@ describe('Email notifications', function() {
                     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
                   },
                   dvt: {
-                    livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
+                    livenet: 'https://dvt-insight.bitpay.com/#/tx/{{txid}}',
                     testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
                   }
                 },
@@ -80,7 +80,7 @@ describe('Email notifications', function() {
 
 
 
-    it('should handle small incomming payments (bch)', function(done) {
+    it('should handle small incomming payments (dvt)', function(done) {
       server.createAddress({}, function(err, address) {
         should.not.exist(err);
 
@@ -100,7 +100,7 @@ describe('Email notifications', function() {
             var one = emails[0];
             one.from.should.equal('bws@dummy.net');
             one.subject.should.contain('New payment received');
-            one.text.should.contain('0.002213 BCH');
+            one.text.should.contain('0.002213 DVT');
             server.storage.fetchUnsentEmails(function(err, unsent) {
               should.not.exist(err);
               unsent.should.be.empty;
@@ -152,7 +152,7 @@ describe('Email notifications', function() {
                     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
                   },
                   dvt: {
-                    livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
+                    livenet: 'https://dvt-insight.bitpay.com/#/tx/{{txid}}',
                     testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
                   }
                 },
@@ -654,7 +654,7 @@ describe('Email notifications', function() {
                     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
                   },
                   dvt: {
-                    livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
+                    livenet: 'https://dvt-insight.bitpay.com/#/tx/{{txid}}',
                     testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
                   }
                 },

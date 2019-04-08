@@ -153,7 +153,7 @@ helpers._generateCopayersTestData = function() {
     var xpriv_44H_0H_0H = xpriv.deriveChild(44, true).deriveChild(0, true).deriveChild(0, true);
     var xpub_44H_0H_0H = Bitcore.HDPublicKey(xpriv_44H_0H_0H);
     var id44btc = Model.Copayer._xPubToCopayerId('btc', xpub_44H_0H_0H.toString());
-    var id44bch = Model.Copayer._xPubToCopayerId('bch', xpub_44H_0H_0H.toString());
+    var id44bch = Model.Copayer._xPubToCopayerId('dvt', xpub_44H_0H_0H.toString());
 
     var xpriv_1H = xpriv.deriveChild(1, true);
     var xpub_1H = Bitcore.HDPublicKey(xpriv_1H);
@@ -426,8 +426,8 @@ helpers.stubHistoryV8 = function(nr, bcHeight, txs) {
 };
 
 
-helpers.stubCheckData = function(bc, server, isBCH, cb) {
-  server.storage.walletCheck({walletId:server.walletId, dvt: isBCH}).then((x) => {
+helpers.stubCheckData = function(bc, server, isDVT, cb) {
+  server.storage.walletCheck({walletId:server.walletId, dvt: isDVT}).then((x) => {
     bc.getCheckData = sinon.stub().callsArgWith(1, null, {sum: x.sum});
     return cb();
   });

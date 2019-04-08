@@ -2,12 +2,12 @@
     <ng-container *ngIf="result.value !== undefined; else rateNotAvailable">
         <ng-container *ngIf="result.approximation">≈</ng-container>
         <ng-container ngSwitch="{{result.unit}}">
-            <ng-container *ngSwitchCase="'DVT'">{{result.value | number:'1.0-8'}} BCH</ng-container>
-            <ng-container *ngSwitchCase="'BCH_bits'">
-                {{result.value | number:'1.0-2'}} {{result.value === 1? 'bit' : 'bits'}} (BCH)
+            <ng-container *ngSwitchCase="'DVT'">{{result.value | number:'1.0-8'}} DVT</ng-container>
+            <ng-container *ngSwitchCase="'DVT_bits'">
+                {{result.value | number:'1.0-2'}} {{result.value === 1? 'bit' : 'bits'}} (DVT)
             </ng-container>
-            <ng-container *ngSwitchCase="'BCH_satoshis'">
-                {{result.value | number:'1.0-0'}} {{result.value === 1? 'satoshi' : 'satoshis'}} (BCH)
+            <ng-container *ngSwitchCase="'DVT_satoshis'">
+                {{result.value | number:'1.0-0'}} {{result.value === 1? 'satoshi' : 'satoshis'}} (DVT)
             </ng-container>
             <ng-container *ngSwitchCase="'BTC'">{{result.value | number:'1.0-8'}} BTC</ng-container>
             <ng-container *ngSwitchCase="'BTC_bits'">

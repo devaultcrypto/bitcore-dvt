@@ -61,7 +61,7 @@ npm install
           }
         }
       },
-      "BCH": {
+      "DVT": {
         "mainnet": {
           "parentChain": "BTC",
           "forkHeight": 478558,

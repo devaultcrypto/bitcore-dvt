@@ -119,7 +119,7 @@ export class Address {
     }
 
     let addrStr = bitcoreAddress.toString(true);
-    if (noNativeCashAddr && coin == 'bch') {
+    if (noNativeCashAddr && coin == 'dvt') {
       addrStr = bitcoreAddress.toLegacyAddress();
     }
 

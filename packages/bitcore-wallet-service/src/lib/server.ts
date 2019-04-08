@@ -14,7 +14,7 @@ import { Storage } from './storage';
 const $ = require('preconditions').singleton();
 const deprecatedServerMessage = require('../deprecated-serverMessages');
 const serverMessages = require('../serverMessages');
-const DVTAddressTranslator = require('./bchaddresstranslator');
+const DVTAddressTranslator = require('./dvtaddresstranslator');
 
 log.debug = log.verbose;
 log.disableColor();
@@ -558,7 +558,7 @@ export class WalletService {
       if (!wallet) return cb(Errors.WALLET_NOT_FOUND);
 
       // cashAddress migration
-      if (wallet.coin != 'bch' || wallet.nativeCashAddr)
+      if (wallet.coin != 'dvt' || wallet.nativeCashAddr)
         return cb(null, wallet);
 
       // only for testing
@@ -1355,7 +1355,7 @@ export class WalletService {
                 return cb(err);
               }
 
-              if (wallet.coin == 'bch' && opts.noCashAddr) {
+              if (wallet.coin == 'dvt' && opts.noCashAddr) {
                 address.address = DVTAddressTranslator.translate(
                   address.address,
                   'copay'
@@ -2398,7 +2398,7 @@ export class WalletService {
       return Errors.INCORRECT_ADDRESS_NETWORK;
     }
 
-    if (wallet.coin == 'bch' && !opts.noCashAddr) {
+    if (wallet.coin == 'dvt' && !opts.noCashAddr) {
       if (addr.toString(true) != inaddr) return Errors.ONLY_CASHADDR;
     }
 
@@ -2543,7 +2543,7 @@ export class WalletService {
         },
         (next) => {
           // check outputs are on 'copay' format for BCH
-          if (wallet.coin != 'bch') return next();
+          if (wallet.coin != 'dvt') return next();
           if (!opts.noCashAddr) return next();
 
           // TODO remove one cashaddr is used internally (noCashAddr flag)?
@@ -2566,7 +2566,7 @@ export class WalletService {
 
             let newAddr;
             try {
-              newAddr = Bitcore_['bch'].Address(x.toAddress).toLegacyAddress();
+              newAddr = Bitcore_['dvt'].Address(x.toAddress).toLegacyAddress();
             } catch (e) {
               return next(e);
             }
@@ -2744,7 +2744,7 @@ export class WalletService {
                 (next) => {
                   if (opts.dryRun) return next();
 
-                  if (txp.coin == 'bch') {
+                  if (txp.coin == 'dvt') {
                     if (opts.noCashAddr && txp.changeAddress) {
                       txp.changeAddress.address = DVTAddressTranslator.translate(
                         txp.changeAddress.address,
@@ -2759,7 +2759,7 @@ export class WalletService {
               (err) => {
                 if (err) return cb(err);
 
-                if (txp.coin == 'bch') {
+                if (txp.coin == 'dvt') {
                   if (opts.returnOrigAddrOutputs) {
                     log.info('Returning Orig BCH address outputs for compat');
                     txp.outputs = opts.origAddrOutputs;
@@ -2851,7 +2851,7 @@ export class WalletService {
                 if (err) return cb(err);
 
                 this._notifyTxProposalAction('NewTxProposal', txp, () => {
-                  if (opts.noCashAddr && txp.coin == 'bch') {
+                  if (opts.noCashAddr && txp.coin == 'dvt') {
                     if (txp.changeAddress) {
                       txp.changeAddress.address = DVTAddressTranslator.translate(
                         txp.changeAddress.address,
@@ -3323,7 +3323,7 @@ export class WalletService {
             return txp.status == 'broadcasted';
           });
 
-          if (opts.noCashAddr && txps[0] && txps[0].coin == 'bch') {
+          if (opts.noCashAddr && txps[0] && txps[0].coin == 'dvt') {
             _.each(txps, x => {
               if (x.changeAddress) {
                 x.changeAddress.address = DVTAddressTranslator.translate(
@@ -3649,7 +3649,7 @@ export class WalletService {
 
       // TODO remove on native bch addr
       this.storage
-        .walletCheck({ walletId: wallet.id, dvt: wallet.coin == 'bch' })
+        .walletCheck({ walletId: wallet.id, dvt: wallet.coin == 'dvt' })
         .then((localCheck: { sum: number }) => {
           bc.getCheckData(wallet, (err, serverCheck) => {
             // If there is an error, just ignore it (server does not support walletCheck)

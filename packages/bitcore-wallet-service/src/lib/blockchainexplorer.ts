@@ -40,10 +40,10 @@ export function BlockChainExplorer(opts) {
 
   const url = opts.url || PROVIDERS[provider][coin][network];
 
-  if (coin != 'bch' && opts.addressFormat)
+  if (coin != 'dvt' && opts.addressFormat)
     throw new Error('addressFormat only supported for bch');
 
-  if (coin == 'bch' && !opts.addressFormat) opts.addressFormat = 'cashaddr';
+  if (coin == 'dvt' && !opts.addressFormat) opts.addressFormat = 'cashaddr';
 
   switch (provider) {
     case 'v8':

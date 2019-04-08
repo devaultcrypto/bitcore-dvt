@@ -1,5 +1,5 @@
 import { BTCTxProvider } from './btc';
-import { DVTTxProvider } from './bch';
+import { DVTTxProvider } from './dvt';
 import { ETHTxProvider } from './eth';
 
 const providers = {

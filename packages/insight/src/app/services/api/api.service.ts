@@ -36,9 +36,9 @@ const stringifyForQuery = (object: any) =>
 
 const consolidatedChainBase = (chain: Chain) =>
   chain.code === 'DVT'
-    ? 'BCH/mainnet'
-    : chain.code === 'tBCH'
-      ? 'BCH/testnet'
+    ? 'DVT/mainnet'
+    : chain.code === 'tDVT'
+      ? 'DVT/testnet'
       : chain.code === 'BTC'
         ? 'BTC/mainnet'
         : chain.code === 'tBTC'

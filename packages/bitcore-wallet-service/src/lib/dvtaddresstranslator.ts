@@ -11,7 +11,7 @@ export class DVTAddressTranslator {
       return 'legacy';
     } catch (e) {
       try {
-        const a = new Bitcore_['bch'].Address(address);
+        const a = new Bitcore_['dvt'].Address(address);
         if (a.toLegacyAddress() == address) return 'copay';
         return 'cashaddr';
       } catch (e) {
@@ -35,7 +35,7 @@ export class DVTAddressTranslator {
     } else {
       ret = _.filter(
         _.map(addresses, (x) => {
-          const bitcore = Bitcore_[from == 'legacy' ? 'btc' : 'bch'];
+          const bitcore = Bitcore_[from == 'legacy' ? 'btc' : 'dvt'];
           let orig;
 
           try {
@@ -45,9 +45,9 @@ export class DVTAddressTranslator {
           }
 
           if (to == 'cashaddr') {
-            return Bitcore_['bch'].Address.fromObject(orig).toCashAddress(true);
+            return Bitcore_['dvt'].Address.fromObject(orig).toCashAddress(true);
           } else if (to == 'copay') {
-            return Bitcore_['bch'].Address.fromObject(orig).toLegacyAddress();
+            return Bitcore_['dvt'].Address.fromObject(orig).toLegacyAddress();
           } else if (to == 'legacy') {
             return Bitcore_['btc'].Address.fromObject(orig).toString();
           }

@@ -47,17 +47,17 @@
 
             <ion-item
               [routerDirection]="'root'"
-              [routerLink]="['/BCH']"
+              [routerLink]="['/DVT']"
               routerLinkActive="active"
             >
-              <ion-label>BCH</ion-label>
+              <ion-label>DVT</ion-label>
             </ion-item>
             <ion-item
               [routerDirection]="'root'"
-              [routerLink]="['/tBCH']"
+              [routerLink]="['/tDVT']"
               routerLinkActive="active"
             >
-              <ion-label>tBCH</ion-label>
+              <ion-label>tDVT</ion-label>
             </ion-item>
             <ion-item
               [routerDirection]="'root'"
@@ -83,15 +83,15 @@
                 active: (config.displayValueCode$ | async) === 'DVT'
               }"
             >
-              <ion-label>BCH</ion-label>
+              <ion-label>DVT</ion-label>
             </ion-item>
             <ion-item
-              (click)="config.displayValueCode$.next('BCH_bits')"
+              (click)="config.displayValueCode$.next('DVT_bits')"
               [ngClass]="{
-                active: (config.displayValueCode$ | async) === 'BCH_bits'
+                active: (config.displayValueCode$ | async) === 'DVT_bits'
               }"
             >
-              <ion-label>Bits (BCH)</ion-label>
+              <ion-label>Bits (DVT)</ion-label>
             </ion-item>
             <ion-item
               (click)="config.displayValueCode$.next('BTC')"

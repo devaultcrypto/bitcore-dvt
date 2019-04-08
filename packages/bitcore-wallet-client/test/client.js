@@ -1034,7 +1034,7 @@ describe('client API', function() {
         var utxos = helpers.generateUtxos('P2PKH', publicKeyRing, 'm/1/0', 1, [1000, 2000]);
         var txp = {
           version: 3,
-          coin: 'bch',
+          coin: 'dvt',
           inputs: utxos,
           outputs: [{
             toAddress: toAddress,
@@ -1069,7 +1069,7 @@ describe('client API', function() {
         var walletId = Uuid.v4();
         var walletPrivKey = new Bitcore.PrivateKey();
         var network = i % 2 == 0 ? 'testnet' : 'livenet';
-        var coin = i % 3 == 0 ? 'bch' : 'btc';
+        var coin = i % 3 == 0 ? 'dvt' : 'btc';
         var secret = Client._buildSecret(walletId, walletPrivKey, coin, network);
         var result = Client.parseSecret(secret);
         result.walletId.should.equal(walletId);
@@ -1246,15 +1246,15 @@ describe('client API', function() {
 
     it('should create Bitcoin Cash wallet', function(done) {
       clients[0].seedFromRandomWithMnemonic({
-        coin: 'bch'
+        coin: 'dvt'
       });
       clients[0].createWallet('mycashwallet', 'pepe', 1, 1, {
-        coin: 'bch'
+        coin: 'dvt'
       }, function(err, secret) {
         should.not.exist(err);
         clients[0].getStatus({}, function(err, status) {
           should.not.exist(err);
-          status.wallet.coin.should.equal('bch');
+          status.wallet.coin.should.equal('dvt');
           done();
         })
       });
@@ -1263,17 +1263,17 @@ describe('client API', function() {
     it('should create a BCH  address correctly', function(done) {
       var xPriv = 'xprv9s21ZrQH143K3GJpoapnV8SFfukcVBSfeCficPSGfubmSFDxo1kuHnLisriDvSnRRuL2Qrg5ggqHKNVpxR86QEC8w35uxmGoggxtQTPvfUu';
       clients[0].seedFromExtendedPrivateKey(xPriv, {
-        'coin': 'bch',
+        'coin': 'dvt',
       });
       clients[0].createWallet('mycashwallet', 'pepe', 1, 1, {
-        coin: 'bch'
+        coin: 'dvt'
       }, function(err, secret) {
         should.not.exist(err);
 
         clients[0].createAddress(function(err, x) {
           should.not.exist(err);
           should.not.exist(err);
-          x.coin.should.equal('bch');
+          x.coin.should.equal('dvt');
           x.network.should.equal('livenet');
           x.address.should.equal('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz');
           done();
@@ -1740,10 +1740,10 @@ describe('client API', function() {
         done();
       });
     });
-    it('should get default fee levels for BCH', function(done) {
+    it('should get default fee levels for DVT', function(done) {
       blockchainExplorerMock.setFeeLevels({});
       clients[0].credentials = {};
-      clients[0].getFeeLevels('bch', 'livenet', function(err, levels) {
+      clients[0].getFeeLevels('dvt', 'livenet', function(err, levels) {
         should.not.exist(err);
         should.exist(levels);
         levels[0].level.should.equal('normal');
@@ -2655,8 +2655,8 @@ describe('client API', function() {
           should.not.exist(err);
 
           // TODO change createAddress to /v4/, and remove this.
-          if (coin == 'bch') {
-            address.address = Bitcore_['bch'].Address(address.address).toString(true);
+          if (coin == 'dvt') {
+            address.address = Bitcore_['dvt'].Address(address.address).toString(true);
           }
           // ==
           
@@ -2785,7 +2785,7 @@ describe('client API', function() {
 
     describe('DVT', function(done) {
       beforeEach(function(done) {
-        setup(1, 1, 'bch', 'livenet', done);
+        setup(1, 1, 'dvt', 'livenet', done);
       });
 
       it('Should sign proposal', function(done) {
@@ -2800,7 +2800,7 @@ describe('client API', function() {
           }],
           feePerKb: 100e2,
           message: 'just some message',
-          coin: 'bch',
+          coin: 'dvt',
         };
         clients[0].createTxProposal(opts, function(err, txp) {
           should.not.exist(err);
@@ -3145,20 +3145,20 @@ describe('client API', function() {
     });
 
 
-    describe('1-of-1 BCH wallet', function() {
+    describe('1-of-1 DVT wallet', function() {
       
       // note this is using BCH with BTC format testnet address
       beforeEach(function(done) {
         DATA = JSON.parse(TestData.payProJsonBody.btc);
-        mockRequest(Buffer.from(TestData.payProJson.bch.body,'hex'), TestData.payProJson.bch.headers);
+        mockRequest(Buffer.from(TestData.payProJson.dvt.body,'hex'), TestData.payProJson.dvt.headers);
 
-        helpers.createAndJoinWallet(clients, 1, 1, {coin:'bch', network:'testnet'}, function(w) {
+        helpers.createAndJoinWallet(clients, 1, 1, {coin:'dvt', network:'testnet'}, function(w) {
           clients[0].createAddress(function(err, x0) {
             should.not.exist(err);
             should.exist(x0.address);
 
             // TODO change createAddress to /v4/, and remove this.
-            x0.address = Bitcore_['bch'].Address(x0.address).toString(true);
+            x0.address = Bitcore_['dvt'].Address(x0.address).toString(true);
             // ======
             blockchainExplorerMock.setUtxo(x0, 1, 2);
             blockchainExplorerMock.setUtxo(x0, 1, 2);
@@ -3196,7 +3196,7 @@ describe('client API', function() {
               var args = spy.lastCall.args[0];
               var data = JSON.parse(args.body);
               var rawTx = Buffer.from(data.transactions[0],'hex');
-              var tx = new Bitcore_['bch'].Transaction(rawTx);
+              var tx = new Bitcore_['dvt'].Transaction(rawTx);
               var script = tx.inputs[0].script;
               script.isPublicKeyHashIn().should.equal(true);
               memo.should.be.equal('an ack memo');
@@ -5429,7 +5429,7 @@ describe('client API', function() {
     btc: ['1PuKMvRFfwbLXyEPXZzkGi111gMUCs6uE3','1GG3JQikGC7wxstyavUBDoCJ66bWLLENZC'],
     dvt: ['CfNCvxmKYzZsS78pDKKfrDd2doZt3w4jUs','CXivsT4p9F6Us1oQGfo6oJpKiDovJjRVUE']
   };
-  _.each(['bch', 'btc'], function(coin) {
+  _.each(['dvt', 'btc'], function(coin) {
     var addr= addrMap[coin];
 
     describe('Sweep paper wallet ' + coin, function() {

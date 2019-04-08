@@ -190,7 +190,7 @@ Verifier.checkPaypro = function(txp, payproOpts) {
     return false;
 
   // To circunvent cashaddr/legacy address problems...
-  if (txp.coin == 'bch' && (new DVTAddress(toAddress).toString()) != (new DVTAddress(payproOpts.toAddress).toString())) 
+  if (txp.coin == 'dvt' && (new DVTAddress(toAddress).toString()) != (new DVTAddress(payproOpts.toAddress).toString())) 
     return false;
 
 // this generates problems...

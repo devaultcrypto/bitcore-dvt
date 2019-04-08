@@ -61,7 +61,7 @@ describe('History V8', function() {
           helpers.stubFeeLevels({
             24: 10000,
           });
-          helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'bch', done);
+          helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'dvt', done);
         });
       });
     });
@@ -82,7 +82,7 @@ describe('History V8', function() {
           helpers.stubFeeLevels({
             24: 10000,
           });
-          helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'bch', done);
+          helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'dvt', done);
         });
       });
     });
@@ -636,7 +636,7 @@ describe('History V8', function() {
               ];
 
               helpers.stubHistoryV8(null, null,txs);
-              helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'bch', () =>{
+              helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'dvt', () =>{
 
               server.getTxHistory({
                 includeExtendedInfo: true,
@@ -734,7 +734,7 @@ describe('History V8', function() {
               ];
 
               helpers.stubHistoryV8(null, null,txs);
-              helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'bch', () =>{
+              helpers.stubCheckData(blockchainExplorer, server, wallet.coin == 'dvt', () =>{
 
               server.getTxHistory({}, function(err, txs) {
                 should.not.exist(err);

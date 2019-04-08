@@ -8,7 +8,7 @@ const $ = require('preconditions').singleton();
 const log = require('npmlog');
 log.debug = log.verbose;
 const Common = require('../common');
-const DVTAddressTranslator = require('../bchaddresstranslator');
+const DVTAddressTranslator = require('../dvtaddresstranslator');
 const Bitcore = require('bitcore-lib');
 const Bitcore_ = {
   btc: Bitcore,
@@ -57,7 +57,7 @@ export class V8 {
     this.v8network = v8network(this.network);
 
     // v8 is always cashaddr
-    this.addressFormat = this.coin == 'bch' ? 'cashaddr' : null;
+    this.addressFormat = this.coin == 'dvt' ? 'cashaddr' : null;
 
     const coin = this.coin.toUpperCase();
 
@@ -497,7 +497,7 @@ export class V8 {
       let out;
       try {
         const addr =
-          this.coin == 'bch'
+          this.coin == 'dvt'
             ? DVTAddressTranslator.translate(data.address, 'copay', 'cashaddr')
             : data.address;
         out = {

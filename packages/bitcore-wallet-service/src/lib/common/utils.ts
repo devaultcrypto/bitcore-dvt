@@ -240,8 +240,8 @@ export class Utils {
       return 'btc';
     } catch (e) {
       try {
-        new Bitcore_['bch'].Address(address);
-        return 'bch';
+        new Bitcore_['dvt'].Address(address);
+        return 'dvt';
       } catch (e) {
         return;
       }
@@ -254,7 +254,7 @@ export class Utils {
     const origObj = origAddress.toObject();
 
     const result = Bitcore_[coin].Address.fromObject(origObj);
-    return coin == 'bch' ? result.toLegacyAddress() : result.toString();
+    return coin == 'dvt' ? result.toLegacyAddress() : result.toString();
   }
 }
 module.exports = Utils;

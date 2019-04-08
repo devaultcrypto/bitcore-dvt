@@ -106,16 +106,16 @@ describe('Utils', function() {
         args: [1299, 'btc'],
         expected: '0.000013',
       }, {
-        args: [1299, 'bch'],
+        args: [1299, 'dvt'],
         expected: '0.000013',
        }, {
-        args: [12940, 'bch'],
+        args: [12940, 'dvt'],
         expected: '0.000129',
       }, {
-        args: [12960, 'bch'],
+        args: [12960, 'dvt'],
         expected: '0.00013',
       }, {
-         args: [129900000, 'bch'],
+         args: [129900000, 'dvt'],
         expected: '1.299',
       }, {
 
@@ -150,7 +150,7 @@ describe('Utils', function() {
       Utils.getAddressCoin('1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA').should.equal('btc');
     });
     it('should identify bch as coin for CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz', function() {
-      Utils.getAddressCoin('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz').should.equal('bch');
+      Utils.getAddressCoin('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz').should.equal('dvt');
     });
     it('should return null for 1L', function() {
       should.not.exist(Utils.getAddressCoin('1L'));
@@ -219,7 +219,7 @@ describe('Utils', function() {
 
   describe('#translateAddress', function() {
     it('should translate address from btc to bch', function() {
-      var res = Utils.translateAddress('1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA', 'bch');
+      var res = Utils.translateAddress('1LqBGSKuX5yYUonjxT5qGfpUsXKYYWeabA', 'dvt');
       res.should.equal('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz');
     });
     it('should translate address from bch to btc', function() {
@@ -227,8 +227,8 @@ describe('Utils', function() {
       res.should.equal('36q2G5FMGvJbPgAVEaiyAsFGmpkhPKwk2r');
     });
 
-    it('should keep the address if there is nothing to do (bch)', function() {
-      var res = Utils.translateAddress('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz', 'bch');
+    it('should keep the address if there is nothing to do (dvt)', function() {
+      var res = Utils.translateAddress('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz', 'dvt');
       res.should.equal('CcJ4qUfyQ8x5NwhAeCQkrBSWVeXxXghcNz');
     });
     it('should keep the address if there is nothing to do (btc)', function() {

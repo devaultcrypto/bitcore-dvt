@@ -606,7 +606,7 @@ API.prototype.getBalanceFromPrivateKey = function(privateKey, coin, cb) {
   var privateKey = new B.PrivateKey(privateKey);
   var address = privateKey.publicKey.toAddress();
   self.getUtxos({
-    addresses: coin == 'bch' ? address.toLegacyAddress() : address.toString(),
+    addresses: coin == 'dvt' ? address.toLegacyAddress() : address.toString(),
   }, function(err, utxos) {
     if (err) return cb(err);
     return cb(null, _.sumBy(utxos, 'satoshis'));
@@ -627,7 +627,7 @@ API.prototype.buildTxFromPrivateKey = function(privateKey, destinationAddress, o
 
     function(next) {
       self.getUtxos({
-        addresses: coin == 'bch' ?  address.toLegacyAddress() : address.toString(),
+        addresses: coin == 'dvt' ?  address.toLegacyAddress() : address.toString(),
       }, function(err, utxos) {
         return next(err, utxos);
       });
@@ -1005,7 +1005,7 @@ API.prototype.decryptPrivateKey = function(password) {
 /**
  * Get current fee levels for the specified network
  *
- * @param {string} coin - 'btc' (default) or 'bch'
+ * @param {string} coin - 'btc' (default) or 'dvt'
  * @param {string} network - 'livenet' (default) or 'testnet'
  * @param {Callback} cb
  * @returns {Callback} cb - Returns error or an object with status information
@@ -1013,7 +1013,7 @@ API.prototype.decryptPrivateKey = function(password) {
 API.prototype.getFeeLevels = function(coin, network, cb) {
   var self = this;
 
-  $.checkArgument(coin || _.includes(['btc', 'bch'], coin));
+  $.checkArgument(coin || _.includes(['btc', 'dvt'], coin));
   $.checkArgument(network || _.includes(['livenet', 'testnet'], network));
 
   self.request.get('/v2/feelevels/?coin=' + (coin || 'btc') + '&network=' + (network || 'livenet'), function(err, result) {
@@ -1064,7 +1064,7 @@ API.prototype.createWallet = function(walletName, copayerName, m, n, opts, cb) {
   opts = opts || {};
 
   var coin = opts.coin || 'btc';
-  if (!_.includes(['btc', 'bch'], coin)) return cb(new Error('Invalid coin'));
+  if (!_.includes(['btc', 'dvt'], coin)) return cb(new Error('Invalid coin'));
 
   var network = opts.network || 'livenet';
   if (!_.includes(['testnet', 'livenet'], network)) return cb(new Error('Invalid network'));
@@ -1145,7 +1145,7 @@ API.prototype.joinWallet = function(secret, copayerName, opts, cb) {
   opts = opts || {};
 
   var coin = opts.coin || 'btc';
-  if (!_.includes(['btc', 'bch'], coin)) return cb(new Error('Invalid coin'));
+  if (!_.includes(['btc', 'dvt'], coin)) return cb(new Error('Invalid coin'));
 
   try {
     var secretData = API.parseSecret(secret);
@@ -1641,7 +1641,7 @@ API.prototype.getBalance = function(opts, cb) {
 
   var args = [];
   if (opts.coin) {
-    if (!_.includes(['btc', 'bch'], opts.coin)) return cb(new Error('Invalid coin'));
+    if (!_.includes(['btc', 'dvt'], opts.coin)) return cb(new Error('Invalid coin'));
     args.push('coin=' + opts.coin);
   }
   var qs = '';
@@ -1849,7 +1849,7 @@ API.signTxProposalFromAirGapped = function(key, txp, unencryptedPkr, m, n, opts)
   opts = opts || {}
 
   var coin = opts.coin || 'btc';
-  if (!_.includes(['btc', 'bch'], coin)) return cb(new Error('Invalid coin'));
+  if (!_.includes(['btc', 'dvt'], coin)) return cb(new Error('Invalid coin'));
 
   var publicKeyRing = JSON.parse(unencryptedPkr);
 

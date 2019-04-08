@@ -79,7 +79,7 @@ module.exports = {
   //      testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
   //    },
   //    dvt: {
-  //      livenet: 'https://bch-insight.bitpay.com/#/tx/{{txid}}',
+  //      livenet: 'https://dvt-insight.bitpay.com/#/tx/{{txid}}',
   //      testnet: 'https://test-bch-insight.bitpay.com/#/tx/{{txid}}',
   //    }
   //  },

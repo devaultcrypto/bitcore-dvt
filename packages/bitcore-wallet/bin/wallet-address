@@ -15,7 +15,7 @@ utils.getClient(program, {
   client.createAddress({}, function(err, x) {
     utils.die(err);
 
-    if (client.credentials.coin == 'bch') {
+    if (client.credentials.coin == 'dvt') {
       x.address = (new bitcoreCash.Address(x.address)).toCashAddress();
     }
 

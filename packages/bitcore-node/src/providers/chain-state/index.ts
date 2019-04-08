@@ -1,5 +1,5 @@
 import { BTCStateProvider } from './btc/btc';
-import { DVTStateProvider } from './bch/bch';
+import { DVTStateProvider } from './dvt/dvt';
 import { ETHStateProvider } from './eth/eth';
 import { BATStateProvider } from './erc20/tokens/bat';
 import { CSP } from '../../types/namespaces/ChainStateProvider';

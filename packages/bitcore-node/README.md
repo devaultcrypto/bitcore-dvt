@@ -44,7 +44,7 @@ Set up your bitcore.config.json file in ./bitcore
           }
         }
       },
-      "BCH": {
+      "DVT": {
         "mainnet": {
           "parentChain": "BTC",
           "forkHeight": 478558,

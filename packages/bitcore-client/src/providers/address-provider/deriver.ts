@@ -1,6 +1,6 @@
 import { Wallet } from '../../wallet';
 import { BtcDeriver } from './btc';
-import { BchDeriver } from './bch';
+import { BchDeriver } from './dvt';
 import { EthDeriver } from './eth';
 
 export interface IDeriver {

@@ -92,7 +92,7 @@ utils.getClient(program, {
   // no backwards compat uri
   if ((/^bitcoin(cash)?:\?r=[\w+]/).exec(arg1)) {
     var coin2 = 'btc';
-    if (arg1.indexOf('bitcoincash') === 0) coin2 = 'bch';
+    if (arg1.indexOf('bitcoincash') === 0) coin2 = 'dvt';
     if (coin != coin2) utils.die('Wallet / Payment Coin mismatch');
     uri  = arg1.replace(/bitcoin(cash)?:\?r=/, '');
 

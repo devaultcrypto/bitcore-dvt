@@ -775,11 +775,11 @@ curl -v localhost:3000/api/status/enabled-chains
         "network": "testnet"
     },
     {
-        "chain": "BCH",
+        "chain": "DVT",
         "network": "mainnet"
     },
     {
-        "chain": "BCH",
+        "chain": "DVT",
         "network": "testnet"
     }
 ]

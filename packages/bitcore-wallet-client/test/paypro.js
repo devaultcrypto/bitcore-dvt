@@ -40,11 +40,11 @@ describe('paypro', function() {
   });
 
   it('Make and verify PP request', function(done) {
-    mockRequest(Buffer.from(TestData.payProJson.bch.body,'hex'), TestData.payProJson.bch.headers);
+    mockRequest(Buffer.from(TestData.payProJson.dvt.body,'hex'), TestData.payProJson.dvt.headers);
     PayPro.get({
       url: 'https://test.bitpay.com/paypro',
       network: 'testnet',
-      coin: 'bch',
+      coin: 'dvt',
     }, function(err, res) {
       should.not.exist(err);
       res.should.be.deep.equal({
@@ -73,7 +73,7 @@ describe('paypro', function() {
     PayPro.get({
       url: 'https://test.bitpay.com/paypro',
       network: 'testnet',
-      coin: 'bch',
+      coin: 'dvt',
     }, function(err, res) {
       should.exist(err);
       done();
@@ -81,13 +81,13 @@ describe('paypro', function() {
   });
 
   it('Should detect a tampered PP request (bad signature)', function(done) {
-    let h = _.clone( TestData.payProJson.bch.headers);
+    let h = _.clone( TestData.payProJson.dvt.headers);
     h.signature = 'xx';
-    mockRequest(Buffer.from(TestData.payProJson.bch.body,'hex'), h);
+    mockRequest(Buffer.from(TestData.payProJson.dvt.body,'hex'), h);
     PayPro.get({
       url: 'https://test.bitpay.com/paypro',
       network: 'testnet',
-      coin: 'bch',
+      coin: 'dvt',
     }, function(err, res) {
       err.toString().should.contain('signature invalid');
       done();
@@ -96,14 +96,14 @@ describe('paypro', function() {
 
 
   it('Should detect a tampered PP request (bad amount)', function(done) {
-    let b = JSON.parse (TestData.payProJson.bch.body);
+    let b = JSON.parse (TestData.payProJson.dvt.body);
     b.outputs[0].amount = 100;
     b=JSON.stringify(b);
-    mockRequest(Buffer.from(b), TestData.payProJson.bch.headers);
+    mockRequest(Buffer.from(b), TestData.payProJson.dvt.headers);
     PayPro.get({
       url: 'https://test.bitpay.com/paypro',
       network: 'testnet',
-      coin: 'bch',
+      coin: 'dvt',
     }, function(err, res) {
       err.toString().should.contain('not match digest');
       done();
@@ -117,7 +117,7 @@ describe('paypro', function() {
       rawTx: 'rawTx1',
       rawTxUnsigned: 'rawTxUnsigned',
       url: 'http://an.url.com/paypro',
-      coin: 'bch',
+      coin: 'dvt',
     };
     mockRequest([Buffer.from('{"memo":"Payment seems OK"}'), Buffer.from('{"memo":"memo1"}') ], {
     });
@@ -135,7 +135,7 @@ describe('paypro', function() {
       rawTx: 'rawTx1',
       rawTxUnsigned: 'rawTxUnsigned',
       url: 'http://an.url.com/paypro',
-      coin: 'bch',
+      coin: 'dvt',
     };
     PayPro.request = function(opts, cb) {
       return cb(null, {

@@ -20,7 +20,7 @@ utils.getClient(program, { mustExist: true }, function (client) {
     if (x.length > 0) {
       console.log('* Addresses:');
       _.each(x, function(a) {
-        if (client.credentials.coin == 'bch') {
+        if (client.credentials.coin == 'dvt') {
           a.address = (new bitcoreCash.Address(a.address)).toCashAddress();
         }
 
