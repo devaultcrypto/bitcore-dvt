@@ -4,7 +4,7 @@
 
 **The peer-to-peer networking protocol for BCH.**
 
-`bitcore-p2p-dvt` adds Devault Cash protocol support for Bitcore.
+`bitcore-p2p-dvt` adds DeVault protocol support for Bitcore.
 
 See [the main bitcore repo](https://github.com/bitpay/bitcore) for more information.
 
@@ -14,7 +14,7 @@ See [the main bitcore repo](https://github.com/bitpay/bitcore) for more informat
 npm install bitcore-p2p-dvt
 ```
 
-In order to connect to the Devault Cash network, you'll need to know the IP address of at least one node of the network, or use [Pool](./docs/pool.md) to discover peers using a DNS seed.
+In order to connect to the DeVault network, you'll need to know the IP address of at least one node of the network, or use [Pool](./docs/pool.md) to discover peers using a DNS seed.
 
 ```javascript
 var Peer = require('bitcore-p2p-dvt').Peer;

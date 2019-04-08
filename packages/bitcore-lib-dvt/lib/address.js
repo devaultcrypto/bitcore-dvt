@@ -633,7 +633,7 @@ Address.prototype.toLegacyAddress = function () {
  * Will return a cashaddr representation of the address. Always return lower case
  * Can be converted by the caller to uppercase is needed (still valid).
  *
- * @returns {string} Devault Cash address
+ * @returns {string} DeVault address
  */
 
 

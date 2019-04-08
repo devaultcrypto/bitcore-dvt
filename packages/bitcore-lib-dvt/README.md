@@ -8,9 +8,9 @@
 
 ## Principles
 
-Devault Cash is another powerful peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Devault network allows for highly resilient bitcoin infrastructure, and the developer community needs reliable, open-source tools to implement bitcoin apps and services.
+DeVault is another powerful peer-to-peer platform for the next generation of financial technology. The decentralized nature of the Devault network allows for highly resilient bitcoin infrastructure, and the developer community needs reliable, open-source tools to implement bitcoin apps and services.
 
-## Devault Cash changes
+## DeVault changes
 
 Devault cash uses a different `sighash` for transaction signatures. The implementation in bitcore-cash has been tested against the original bitcoin-cash test vectors (see sighash.json in `/test`). `bitcoin-cash` modifications in script evaluation have not been implemented yet.
 

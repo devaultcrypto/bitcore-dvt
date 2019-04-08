@@ -1,7 +1,7 @@
 {
   "name": "bitcore-lib-dvt",
   "version": "8.1.1",
-  "description": "A pure and powerful JavaScript Devault Cash library.",
+  "description": "A pure and powerful JavaScript DeVault library.",
   "author": "BitPay <dev@bitpay.com>",
   "main": "index.js",
   "scripts": {
