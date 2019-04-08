@@ -2,7 +2,7 @@
   "name": "bitcore-p2p-dvt",
   "version": "8.1.1",
   "description": "Interface to the bitcoin P2P network for bitcore",
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "Proteus <pro@devault.cc>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -53,11 +53,12 @@
   ],
   "keywords": [
     "bitcoin",
-    "bitcore"
+    "bitcore",
+    "devault"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore-p2p.git"
+    "url": "https://github.com/proteanx/bitcore-p2p-dvt.git"
   },
   "dependencies": {
     "bitcore-lib": "^8.1.1",
