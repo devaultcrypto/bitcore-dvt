@@ -2,7 +2,7 @@
   "name": "bitcore-p2p-dvt",
   "version": "8.1.1",
   "description": "Interface to the bitcoin P2P network for bitcore",
-  "author": "Proteus <pro@devault.cc>",
+  "author": "Proteus <pro@proteanx.com>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
