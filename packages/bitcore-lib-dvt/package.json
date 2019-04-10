@@ -2,7 +2,7 @@
   "name": "bitcore-lib-dvt",
   "version": "8.1.1",
   "description": "A pure and powerful JavaScript DeVault library.",
-  "author": "Proteus <pro@devault.cc>",
+  "author": "Proteus <pro@proteanx.com>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",

@@ -206,8 +206,11 @@ export class HeadNavComponent implements OnInit {
 
     if (coin.toLowerCase() === 'btc' && network === 'mainnet') {
       return this.isValidBitcoinMainnetAddress(addr);
-    } else if (coin.toLowerCase() === 'btc' && network === 'testnet') {
-      return this.isValidBitcoinTestnetAddress(addr);
+    } else if (coin.toLowerCase() === 'dvt' && network === 'testnet') {
+      return (
+        this.isValidBitcoinCashMainnetAddress(addr) ||
+        this.isValidBitcoinCashLegacyMainnetAddress(addr)
+      );
     } else if (coin.toLowerCase() === 'dvt' && network === 'mainnet') {
       return (
         this.isValidBitcoinCashMainnetAddress(addr) ||
