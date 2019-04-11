@@ -207,10 +207,7 @@ export class HeadNavComponent implements OnInit {
     if (coin.toLowerCase() === 'btc' && network === 'mainnet') {
       return this.isValidBitcoinMainnetAddress(addr);
     } else if (coin.toLowerCase() === 'dvt' && network === 'testnet') {
-      return (
-        this.isValidBitcoinCashMainnetAddress(addr) ||
-        this.isValidBitcoinCashLegacyMainnetAddress(addr)
-      );
+      return this.isValidBitcoinCashTestnetAddress(addr);
     } else if (coin.toLowerCase() === 'dvt' && network === 'mainnet') {
       return (
         this.isValidBitcoinCashMainnetAddress(addr) ||
@@ -222,8 +219,9 @@ export class HeadNavComponent implements OnInit {
   private isValidBitcoinMainnetAddress(data: string): boolean {
     return !!bitcoreLib.Address.isValid(data, 'mainnet');
   }
-  private isValidBitcoinTestnetAddress(data: string): boolean {
-    return !!bitcoreLib.Address.isValid(data, 'testnet');
+
+  private isValidBitcoinCashTestnetAddress(data: string): boolean {
+    return !!bitcoreLibCash.Address.isValid(data, 'testnet');
   }
 
   private isValidBitcoinCashLegacyMainnetAddress(data: string): boolean {

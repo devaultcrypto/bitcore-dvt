@@ -76,8 +76,8 @@ export class SearchProvider {
 
     if (coin.toLowerCase() === 'btc' && network === 'mainnet') {
       return this.isValidBitcoinMainnetAddress(addr);
-    } else if (coin.toLowerCase() === 'btc' && network === 'testnet') {
-      return this.isValidBitcoinTestnetAddress(addr);
+    } else if (coin.toLowerCase() === 'dvt' && network === 'testnet') {
+      return this.isValidBitcoinCashTestnetAddress(addr);
     } else if (coin.toLowerCase() === 'dvt' && network === 'mainnet') {
       return (
         this.isValidBitcoinCashMainnetAddress(addr) ||
@@ -89,8 +89,9 @@ export class SearchProvider {
   private isValidBitcoinMainnetAddress(data: string): boolean {
     return !!bitcoreLib.Address.isValid(data, 'mainnet');
   }
-  private isValidBitcoinTestnetAddress(data: string): boolean {
-    return !!bitcoreLib.Address.isValid(data, 'testnet');
+
+  private isValidBitcoinCashTestnetAddress(data: string): boolean {
+    return !!bitcoreLibCash.Address.isValid(data, 'testnet');
   }
 
   private isValidBitcoinCashLegacyMainnetAddress(data: string): boolean {
