@@ -12,7 +12,7 @@ const initialChain: Chain = DVT;
 const expectedChains: Chain[] = [DVT, tDVT, BTC, tBTC];
 
 export const environment = {
-  apiPrefix: 'https://api.bitcore.io/api',
+  apiPrefix: 'http://localhost:3000',
   ratesApi: 'https://bitpay.com/api/rates/dvt',
   production: true,
   debugRouting: false,
