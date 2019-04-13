@@ -1,11 +1,17 @@
-<head-nav></head-nav>
+<ion-header>
+  <head-nav [title]="'DeVault Block Explorer'"></head-nav>
+</ion-header>
 
 <ion-content>
   <ion-grid fixed>
     <div class="page-content">
       <h2>Latest Blocks</h2>
-      <latest-blocks [showTimeAs]="'age'" [showAllBlocksButton]="true" #latestBlocks></latest-blocks>
+      <latest-blocks [numBlocks]="8" [showTimeAs]="'age'" [showAllBlocksButton]="true" #latestBlocks></latest-blocks>
     </div>
+      <div>
+        <h1>Latest Transactions</h1>
+        <latest-transactions [refreshSeconds]="8"></latest-transactions>
+      </div>
   </ion-grid>
 </ion-content>
 <footer [chainNetwork]="chainNetwork"></footer>
