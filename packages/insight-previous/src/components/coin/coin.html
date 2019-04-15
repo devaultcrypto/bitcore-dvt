@@ -13,7 +13,7 @@
     <ion-col col-5 text-right>
       <span ion-text>
         <ion-icon name="md-add-circle" color="dark"></ion-icon>
-        {{ currencyProvider.getConvertedNumber(coin.value) | number:'1.0-8' }}
+        {{ currencyProvider.getConvertedNumber(coin.value) | number:'1.0-3' }}
         {{ currencyProvider.currencySymbol }}
       </span>
     </ion-col>
@@ -37,7 +37,7 @@
       <span ion-text [color]="!coin.spentTxid ? 'default':'dark-light'">
         <ion-icon name="md-remove-circle" [color]="!coin.spentTxid ? 'default':'dark-light'" *ngIf="coin.height >= 0">
         </ion-icon>
-        {{ currencyProvider.getConvertedNumber(coin.value) | number:'1.0-8' }}
+        {{ currencyProvider.getConvertedNumber(coin.value) | number:'1.0-3' }}
         {{ currencyProvider.currencySymbol }}
       </span>
     </ion-col>
