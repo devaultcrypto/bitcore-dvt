@@ -1,6 +1,6 @@
 # Bitcore
 
-**Infrastructure to build Bitcoin and blockchain-based applications for the next generation of financial technology.**
+**Infrastructure to build DeVault and blockchain-based applications for the next generation of financial technology.**
 
 ## Getting Started
 
@@ -57,10 +57,10 @@ npm install
 
 </details>
 
-### 2. Setup Bitcoin Node
+### 2. Setup DeVault Node
 
 <details>
-<summary>Example Bitcoin Mainnet Config</summary>
+<summary>Example DeVault Mainnet Config</summary>
 
 ```sh
 whitelist=127.0.0.1
@@ -73,8 +73,8 @@ upnp=1
 # Make sure port & rpcport matches the
 # bitcore.config.json ports for BTC mainnet
 
-# if using Bitcoin Core v0.17+ prefix
-# [main]
+# prefix
+[main]
 
 rpcallowip=127.0.0.1
 
@@ -84,14 +84,14 @@ rpcpassword=password
 
 </details>
 
-### 3. Run Bitcoin node
+### 3. Run DeVault node
 
 <details>
-<summary>Example Starting a Bitcoin Node</summary>
+<summary>Example Starting a DeVault Node</summary>
 
 ```sh
-# Path to your bitcoin application and path to the config above
-/Applications/Bitcoin-Qt.app/Contents/MacOS/DeVault-Qt -datadir=/Users/username/blockchains/devault/networks/mainnet/
+# Path to your devault application and path to the config above
+/Applications/DeVault-Qt.app/Contents/MacOS/DeVault-Qt -datadir=/Users/username/blockchains/devault/networks/mainnet/
 ```
 
 </details>
@@ -104,23 +104,19 @@ npm run node
 
 ## Applications
 
-- [Bitcore Node](packages/bitcore-node) - A full node with extended capabilities using Bitcoin Core
+- [Bitcore Node](packages/bitcore-node) - A full node with extended capabilities using DeVault Core
 - [Bitcore Wallet](packages/bitcore-wallet) - A command-line based wallet client
 - [Bitcore Wallet Client](packages/bitcore-wallet-client) - A client for the wallet service
 - [Bitcore Wallet Service](packages/bitcore-wallet-service) - A multisig HD service for wallets
-- [Bitpay Wallet](https://github.com/bitpay/copay) - An easy-to-use, multiplatform, multisignature, secure bitcoin wallet
 - [Insight](packages/insight-previous) - A blockchain explorer web user interface
 
 ## Libraries
 
-- [Bitcore Channel](https://github.com/bitpay/bitcore-channel) - Micropayment channels for rapidly adjusting bitcoin transactions
-- [Bitcore ECIES](https://github.com/bitpay/bitcore-ecies) - Uses ECIES symmetric key negotiation from public keys to encrypt arbitrarily long data streams
 - [Bitcore Lib](packages/bitcore-lib) - A pure and powerful JavaScript Bitcoin library
-- [Bitcore Lib Cash](packages/bitcore-lib-dvt) - A pure and powerful JavaScript Bitcoin Cash library
-- [Bitcore Message](https://github.com/bitpay/bitcore-message) - Bitcoin message verification and signing
+- [Bitcore Lib DVT](packages/bitcore-lib-dvt) - A pure and powerful JavaScript DeVault library
 - [Bitcore Mnemonic](packages/bitcore-mnemonic) - Implements mnemonic code for generating deterministic keys
 - [Bitcore P2P](packages/bitcore-p2p) - The peer-to-peer networking protocol for BTC
-- [Bitcore P2P Cash](packages/bitcore-p2p-dvt) - The peer-to-peer networking protocol for BCH
+- [Bitcore P2P DVT](packages/bitcore-p2p-dvt) - The peer-to-peer networking protocol for DVT
 - [Crypto Wallet Core](packages/crypto-wallet-core) - A coin-agnostic wallet library for creating transactions, signing, and address derivation
 
 ## Extras
@@ -136,4 +132,3 @@ See [CONTRIBUTING.md](https://github.com/bitpay/bitcore/blob/master/Contributing
 
 Code released under [the MIT license](https://github.com/bitpay/bitcore/blob/master/LICENSE).
 
-Copyright 2013-2019 BitPay, Inc. Bitcore is a trademark maintained by BitPay, Inc.
