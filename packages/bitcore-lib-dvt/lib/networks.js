@@ -158,17 +158,13 @@ function removeNetwork(network) {
 }
 
 var dnsSeeds = [
-  'seed.bitcoinabc.org',
-  'seed-abc.bitcoinforks.org',
-  'seed.bitcoinunlimited.info',
-  'seed.bitprim.org ',
-  'seed.deadalnix.me'
+  'seed.devault.cc'
 ];
 
 var liveNetwork = {
   name: 'livenet',
   alias: 'mainnet',
-  prefix: 'bitcoincash',
+  prefix: 'devault',
   pubkeyhash: 28,
   privatekey: 0x80,
   scripthash: 40,

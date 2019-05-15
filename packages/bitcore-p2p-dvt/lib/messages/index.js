@@ -97,6 +97,8 @@ Messages.prototype._discardUntilNextMessage = function(dataBuffer) {
 };
 
 Messages.prototype._buildFromBuffer = function(command, payload) {
+  if (command === 'sendheaders') return;
+  if (command === 'sendcmpct') return;
   if (!this.builder.commands[command]) {
     throw new Error('Unsupported message command: ' + command);
   }
