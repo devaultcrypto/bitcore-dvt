@@ -1,6 +1,6 @@
 <ion-header no-border>
   <ion-navbar color="brand" hideBackButton>
-    <ion-title (click)="goHome()" class="logo-header">insight</ion-title>
+    <ion-title (click)="goHome()" class="logo-header">Explore DVT</ion-title>
     <button class="search-button" ion-button clear icon-only (click)="toggleSearch()">
       <ion-icon name="search" [color]="!showSearch ? 'light' : 'dark'"></ion-icon>
     </button>
@@ -11,7 +11,6 @@
 
     <ion-buttons>
       <button ion-button (click)="changeCurrency($event)">
-        <ion-icon name="logo-bitcoin" *ngIf="currencyProvider?.currencySymbol !== 'USD'"></ion-icon>
         <ion-icon name="logo-usd" *ngIf="currencyProvider?.currencySymbol === 'USD'"></ion-icon>
         &nbsp;
         {{ currencyProvider?.currencySymbol }}
