@@ -12,7 +12,7 @@
 ### Checkout the repo
 
 ```sh
-git clone git@github.com:bitpay/bitcore.git
+git clone git@github.com:devaultcrypto/bitcore-dvt.git
 git checkout master
 npm install
 ```
@@ -28,67 +28,23 @@ npm install
 ```json
 {
   "bitcoreNode": {
+    "services": {
+      "api": {
+      }
+    },
     "chains": {
-      "BTC": {
-        "mainnet": {
-          "chainSource": "p2p",
-          "trustedPeers": [
-            {
-              "host": "127.0.0.1",
-              "port": 20008
-            }
-          ],
-          "rpc": {
-            "host": "127.0.0.1",
-            "port": 20009,
-            "username": "username",
-            "password": "password"
-          }
-        },
-        "regtest": {
-          "chainSource": "p2p",
-          "trustedPeers": [
-            {
-              "host": "127.0.0.1",
-              "port": 20020
-            }
-          ],
-          "rpc": {
-            "host": "127.0.0.1",
-            "port": 20021,
-            "username": "username",
-            "password": "password"
-          }
-        }
-      },
       "DVT": {
-        "mainnet": {
-          "parentChain": "BTC",
-          "forkHeight": 478558,
-          "trustedPeers": [
-            {
-              "host": "127.0.0.1",
-              "port": 30008
-            }
-          ],
-          "rpc": {
-            "host": "127.0.0.1",
-            "port": 30009,
-            "username": "username",
-            "password": "password"
-          }
-        },
-        "regtest": {
+        "testnet": {
           "chainSource": "p2p",
           "trustedPeers": [
             {
-              "host": "127.0.0.1",
-              "port": 30020
+              "host": "localhost",
+              "port": 39039
             }
           ],
           "rpc": {
-            "host": "127.0.0.1",
-            "port": 30021,
+            "host": "localhost",
+            "port": 13339,
             "username": "username",
             "password": "password"
           }
@@ -120,8 +76,6 @@ upnp=1
 # if using Bitcoin Core v0.17+ prefix
 # [main]
 
-port=20008
-rpcport=20009
 rpcallowip=127.0.0.1
 
 rpcuser=username
@@ -137,7 +91,7 @@ rpcpassword=password
 
 ```sh
 # Path to your bitcoin application and path to the config above
-/Applications/Bitcoin-Qt.app/Contents/MacOS/Bitcoin-Qt -datadir=/Users/username/blockchains/bitcoin-core/networks/mainnet/
+/Applications/Bitcoin-Qt.app/Contents/MacOS/DeVault-Qt -datadir=/Users/username/blockchains/devault/networks/mainnet/
 ```
 
 </details>

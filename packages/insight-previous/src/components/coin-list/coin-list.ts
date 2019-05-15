@@ -57,8 +57,8 @@ export class CoinListComponent implements OnInit {
         ? unconfirmedTxs.push({ height: mintHeight, mintTxid, value })
         : confirmedTxs.push({ height: mintHeight, mintTxid, value });
 
-      spentHeight > 0
-        ? confirmedTxs.push({ height: spentHeight, spentTxid, value })
+      spentHeight >= -1
+        ? unconfirmedTxs.push({ height: spentHeight, spentTxid, value })
         : null;
     });
 
