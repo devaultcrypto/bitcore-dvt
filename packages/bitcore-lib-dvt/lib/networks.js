@@ -170,8 +170,8 @@ var liveNetwork = {
   scripthash: 40,
   xpubkey: 0x0488b21e,
   xprivkey: 0x0488ade4,
-  networkMagic: 0xe3e1f3e8,
-  port: 8333,
+  networkMagic: 0xde3a9c3l,
+  port: 33039,
   dnsSeeds: dnsSeeds
 };
 
@@ -184,7 +184,7 @@ var testNetwork = {
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
   networkMagic: 0xf4e5f3f4,
-  port: 18333,
+  port: 39039,
   dnsSeeds: dnsSeeds
 };
 

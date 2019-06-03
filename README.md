@@ -71,9 +71,9 @@ irc=1
 upnp=1
 
 # Make sure port & rpcport matches the
-# bitcore.config.json ports for BTC mainnet
+# bitcore.config.json ports
 
-# prefix
+# network prefix
 [main]
 
 rpcallowip=127.0.0.1
