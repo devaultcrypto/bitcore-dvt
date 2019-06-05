@@ -170,7 +170,7 @@ var liveNetwork = {
   scripthash: 40,
   xpubkey: 0x0488b21e,
   xprivkey: 0x0488ade4,
-  networkMagic: 0xde3a9c3l,
+  networkMagic: 0xde3a9c03,
   port: 33039,
   dnsSeeds: dnsSeeds
 };
