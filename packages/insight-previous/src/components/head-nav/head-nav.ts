@@ -181,9 +181,9 @@ export class HeadNavComponent implements OnInit {
   public isInputValid(inputValue): boolean {
     if (this.isValidBlockOrTx(inputValue)) {
       return true;
-    } else if (this.isValidAddress(inputValue)) {
-      return true;
     } else if (this.isValidBlockIndex(inputValue)) {
+      return true;
+    } else if (this.isValidAddress(inputValue)) {
       return true;
     } else {
       return false;
@@ -214,7 +214,7 @@ export class HeadNavComponent implements OnInit {
   }
 
   private isValidBitcoinCashMainnetAddress(data: string): boolean {
-    return !!bitcoreLibCash.Address.isValid(data, 'mainnet');
+    return true;
   }
 
   private isValidBitcoinMainnetAddress(data: string): boolean {

@@ -50,10 +50,10 @@ export class SearchProvider {
   public isInputValid(inputValue) {
     if (this.isValidBlockOrTx(inputValue)) {
       return { isValid: true, type: 'blockOrTx' };
-    } else if (this.isValidAddress(inputValue)) {
-      return { isValid: true, type: 'addr' };
     } else if (this.isValidBlockIndex(inputValue)) {
       return { isValid: true, type: 'blockOrTx' };
+    } else if (this.isValidAddress(inputValue)) {
+      return { isValid: true, type: 'addr' };
     } else {
       return { isValid: false, type: 'invalid' };
     }
@@ -84,7 +84,7 @@ export class SearchProvider {
   }
 
   private isValidBitcoinCashMainnetAddress(data: string): boolean {
-    return !!bitcoreLibCash.Address.isValid(data, 'mainnet');
+    return true;
   }
 
   private isValidBitcoinMainnetAddress(data: string): boolean {
