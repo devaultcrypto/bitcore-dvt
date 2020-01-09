@@ -4,7 +4,7 @@
 
 ### Get Transactions by blockHeight
 
-GET `/api/BTC/mainnet/tx?blockHeight=12`
+GET `/api/DVT/mainnet/tx?blockHeight=12`
 
 <details>
 <summary>
@@ -14,7 +14,7 @@ GET `/api/BTC/mainnet/tx?blockHeight=12`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/tx?blockHeight=12
+curl -v localhost:3000/api/DVT/mainnet/tx?blockHeight=12
 ```
 
 ```json
@@ -23,7 +23,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx?blockHeight=12
         "_id": "5c34b35d69d5562c2fc44026",
         "txid": "3b96bb7e197ef276b85131afd4a09c059cc368133a26ca04ebffb0ab4f75c8b8",
         "network": "mainnet",
-        "chain": "BTC",
+        "chain": "DVT",
         "blockHeight": 12,
         "blockHash": "0000000027c2488e2510d1acf4369787784fa20ee084c258b58d9fbd43802b5e",
         "blockTime": "2009-01-09T04:21:28.000Z",
@@ -44,7 +44,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx?blockHeight=12
 
 ### Get Transactions by blockHash
 
-GET `/api/BTC/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b960a8d03705d1ace08b1a19da3fdcc99ddbd`
+GET `/api/DVT/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b960a8d03705d1ace08b1a19da3fdcc99ddbd`
 
 <details>
 <summary><b>Response</b></summary>
@@ -53,7 +53,7 @@ GET `/api/BTC/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b960a8d03705d1ace0
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b960a8d03705d1ace08b1a19da3fdcc99ddbd
+curl -v localhost:3000/api/DVT/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b960a8d03705d1ace08b1a19da3fdcc99ddbd
 ```
 
 ```json
@@ -62,7 +62,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b
         "_id": "5c34b35d69d5562c2fc43eff",
         "txid": "9b0fc92260312ce44e74ef369f5c66bbb85848f2eddd5a7a1cde251e54ccfdd5",
         "network": "mainnet",
-        "chain": "BTC",
+        "chain": "DVT",
         "blockHeight": 2,
         "blockHash": "000000006a625f06636b8bb6ac7b960a8d03705d1ace08b1a19da3fdcc99ddbd",
         "blockTime": "2009-01-09T02:55:44.000Z",
@@ -83,7 +83,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx?blockHash=000000006a625f06636b8bb6ac7b
 
 ### Get Transaction by txid
 
-GET `/api/BTC/mainnet/tx/:txid`
+GET `/api/DVT/mainnet/tx/:txid`
 
 <details>
 <summary><b>Response</b></summary>
@@ -92,7 +92,7 @@ GET `/api/BTC/mainnet/tx/:txid`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/tx/9b0fc92260312ce44e74ef369f5c66bbb85848f2eddd5a7a1cde251e54ccfdd5
+curl -v localhost:3000/api/DVT/mainnet/tx/9b0fc92260312ce44e74ef369f5c66bbb85848f2eddd5a7a1cde251e54ccfdd5
 ```
 
 ```json
@@ -100,7 +100,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx/9b0fc92260312ce44e74ef369f5c66bbb85848
     "_id": "5c34b35d69d5562c2fc43eff",
     "txid": "9b0fc92260312ce44e74ef369f5c66bbb85848f2eddd5a7a1cde251e54ccfdd5",
     "network": "mainnet",
-    "chain": "BTC",
+    "chain": "DVT",
     "blockHeight": 2,
     "blockHash": "000000006a625f06636b8bb6ac7b960a8d03705d1ace08b1a19da3fdcc99ddbd",
     "blockTime": "2009-01-09T02:55:44.000Z",
@@ -120,7 +120,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx/9b0fc92260312ce44e74ef369f5c66bbb85848
 
 ### Get Authhead
 
-GET `/BTC/mainnet/tx/:txid/authhead`
+GET `/DVT/mainnet/tx/:txid/authhead`
 
 <details>
 <summary>
@@ -130,13 +130,13 @@ GET `/BTC/mainnet/tx/:txid/authhead`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368133a26ca04ebffb0ab4f75c8b8/authhead
+curl -v localhost:3000/api/DVT/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368133a26ca04ebffb0ab4f75c8b8/authhead
 ```
 
 ```json
 {
     "authbase": "3b96bb7e197ef276b85131afd4a09c059cc368133a26ca04ebffb0ab4f75c8b8",
-    "chain": "BTC",
+    "chain": "DVT",
     "identityOutputs": [],
     "network": "mainnet"
 }
@@ -146,7 +146,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368
 
 ### Get Coins
 
-GET `/BTC/mainnet/tx/:txid/coins`
+GET `/DVT/mainnet/tx/:txid/coins`
 
 <details>
 <summary>
@@ -156,7 +156,7 @@ GET `/BTC/mainnet/tx/:txid/coins`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368133a26ca04ebffb0ab4f75c8b8/coins
+curl -v localhost:3000/api/DVT/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368133a26ca04ebffb0ab4f75c8b8/coins
 ```
 
 ```json
@@ -165,7 +165,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368
     "outputs": [
         {
           "address": "1EVzaFkkNNXq6RJh2oywwJMn8JPiq8ikDi",
-          "chain": "BTC",
+          "chain": "DVT",
           "coinbase": true,
           "confirmations": -1,
           "mintHeight": 568302,
@@ -180,7 +180,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368
         },
         {
           "address": "false",
-          "chain": "BTC",
+          "chain": "DVT",
           "coinbase": true,
           "confirmations": -1,
           "mintHeight": 568302,
@@ -203,7 +203,7 @@ curl -v localhost:3000/api/BTC/mainnet/tx/3b96bb7e197ef276b85131afd4a09c059cc368
 
 ### Get Address Transactions
 
-GET `/api/BTC/mainnet/address/:address/txs`
+GET `/api/DVT/mainnet/address/:address/txs`
 
 <details>
 <summary><b>Response</b></summary>
@@ -212,14 +212,14 @@ GET `/api/BTC/mainnet/address/:address/txs`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX/txs
+curl -v localhost:3000/api/DVT/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX/txs
 ```
 
 ```json
 [
     {
         "_id": "5bd0b60d19b81e4567d3a10d",
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "mainnet",
         "coinbase": true,
         "mintIndex": 0,
@@ -234,7 +234,7 @@ curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJ
     },
     {
         "_id": "5bd0be3f6d88cf473695b007",
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "mainnet",
         "coinbase": false,
         "mintIndex": 1,
@@ -255,7 +255,7 @@ curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJ
 
 ### Get Transaction Outputs by Address
 
-GET `/api/BTC/mainnet/address/:address/?unspent=true`
+GET `/api/DVT/mainnet/address/:address/?unspent=true`
 
 <details>
 <summary><b>Response</b></summary>
@@ -264,14 +264,14 @@ GET `/api/BTC/mainnet/address/:address/?unspent=true`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX/?unspent=true
+curl -v localhost:3000/api/DVT/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX/?unspent=true
 ```
 
 ```json
 [
     {
         "_id": "5c34b35d69d5562c2fc43e89",
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "mainnet",
         "coinbase": true,
         "mintIndex": 0,
@@ -291,7 +291,7 @@ curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJ
 
 ### Get Balance for an Address
 
-GET `/api/BTC/mainnet/address/:address/balance`
+GET `/api/DVT/mainnet/address/:address/balance`
 
 <details>
 <summary><b>Response</b></summary>
@@ -300,7 +300,7 @@ GET `/api/BTC/mainnet/address/:address/balance`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX/balance
+curl -v localhost:3000/api/DVT/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJX/balance
 ```
 
 ```json
@@ -317,7 +317,7 @@ curl -v localhost:3000/api/BTC/mainnet/address/12c6DSiU4Rq3P4ZxziKxzrL5LmMBrzjrJ
 
 ### Get Block
 
-GET `/api/BTC/mainnet/block/:blockId`
+GET `/api/DVT/mainnet/block/:blockId`
 
 <details>
 <summary><b>Response</b></summary>
@@ -326,13 +326,13 @@ GET `/api/BTC/mainnet/block/:blockId`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/block/00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048
+curl -v localhost:3000/api/DVT/mainnet/block/00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048
 ```
 
 ```json
 {
     "_id": "5c34b53569d5562c2fc8e65a",
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "hash": "00000000839a8e6886ab5951d76f411475428afc90947ee320161bbf18eb6048",
     "height": 1,
@@ -355,7 +355,7 @@ curl -v localhost:3000/api/BTC/mainnet/block/00000000839a8e6886ab5951d76f4114754
 
 ### Get Current Height
 
-GET `/api/BTC/mainnet/block/tip`
+GET `/api/DVT/mainnet/block/tip`
 
 <details>
 <summary><b>Response</b></summary>
@@ -364,13 +364,13 @@ GET `/api/BTC/mainnet/block/tip`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/block/tip
+curl -v localhost:3000/api/DVT/mainnet/block/tip
 ```
 
 ```json
 {
     "_id": "5c94f6da12025b0a3904ba43",
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "hash": "000000000000000000256c7224f97c8c508fc8b4bb5537b0d731b7d45741408a",
     "height": 568303,
@@ -420,14 +420,14 @@ node packages/bitcore-node/build/test/benchmark/wallet-benchmark.js
 
 ### Add Wallet
 
-POST `/api/BTC/mainnet/wallet`
+POST `/api/DVT/mainnet/wallet`
 
 BODY:
 
 ```json
 {
     "name": "WalletName2",
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "pubKey": "03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d",
     "path": "m/44'/0'/0'"
@@ -443,17 +443,17 @@ BODY:
 ```sh
 curl -v POST -H "Content-Type: application/json" -d '{
   "name": "WalletName2",
-  "chain": "BTC",
+  "chain": "DVT",
   "network": "mainnet",
   "pubKey": "03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d",
   "path": "m/44'/0'/0'"
 }'
-"http://localhost:3000/api/BTC/mainnet/wallet/"
+"http://localhost:3000/api/DVT/mainnet/wallet/"
 ```
 
 ```json
 {
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "name": "WalletName2",
     "pubKey": "03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d",
@@ -466,7 +466,7 @@ curl -v POST -H "Content-Type: application/json" -d '{
 
 ### Get Wallet
 
-GET `/api/BTC/mainnet/wallet/:pubKey`
+GET `/api/DVT/mainnet/wallet/:pubKey`
 
 <details>
 <summary><b>Response</b></summary>
@@ -475,13 +475,13 @@ GET `/api/BTC/mainnet/wallet/:pubKey`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d
+curl -v localhost:3000/api/DVT/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d
 ```
 
 ```json
 {
     "_id": "5c3639d1e60f7b2e174afc65",
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "name": "WalletName",
     "pubKey": "03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d",
@@ -494,7 +494,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82
 
 ### Import Addresses
 
-POST `/api/BTC/mainnet/wallet/:pubKey`
+POST `/api/DVT/mainnet/wallet/:pubKey`
 
 BODY: raw jsonl wallet file of the form
 
@@ -511,13 +511,13 @@ BODY: raw jsonl wallet file of the form
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d
+curl -v localhost:3000/api/DVT/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d
 ```
 
 ```json
 {
     "_id": "5c3639d1e60f7b2e174afc65",
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "name": "WalletName",
     "pubKey": "03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d",
@@ -530,7 +530,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82
 
 ### Get Wallet Addresses
 
-GET `/api/BTC/mainnet/wallet/:pubKey/addresses`
+GET `/api/DVT/mainnet/wallet/:pubKey/addresses`
 
 <details>
 <summary><b>Response</b></summary>
@@ -539,7 +539,7 @@ GET `/api/BTC/mainnet/wallet/:pubKey/addresses`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d/addresses
+curl -v localhost:3000/api/DVT/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82156ea42c8659c8358b68c828df9a1c3d/addresses
 ```
 
 ```json
@@ -560,7 +560,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/03bdb94afdc7e5c4811bf9b160ac475b82
 
 ### Get Wallet Transactions
 
-GET `/api/BTC/mainnet/wallet/:pubKey/transactions`
+GET `/api/DVT/mainnet/wallet/:pubKey/transactions`
 
 <details>
 <summary><b>Response</b></summary>
@@ -569,7 +569,7 @@ GET `/api/BTC/mainnet/wallet/:pubKey/transactions`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/transactions
+curl -v localhost:3000/api/DVT/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/transactions
 ```
 
 ```json
@@ -592,7 +592,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d95
 
 ### Get Balance
 
-GET `/api/BTC/mainnet/wallet/:pubKey/balance`
+GET `/api/DVT/mainnet/wallet/:pubKey/balance`
 
 <details>
 <summary><b>Response</b></summary>
@@ -601,7 +601,7 @@ GET `/api/BTC/mainnet/wallet/:pubKey/balance`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/balance
+curl -v localhost:3000/api/DVT/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/balance
 ```
 
 ```json
@@ -616,7 +616,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d95
 
 ### Get Wallet UTXOS
 
-GET `/api/BTC/mainnet/wallet/:pubKey/utxos`
+GET `/api/DVT/mainnet/wallet/:pubKey/utxos`
 
 <details>
 <summary><b>Response</b></summary>
@@ -625,14 +625,14 @@ GET `/api/BTC/mainnet/wallet/:pubKey/utxos`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/utxos
+curl -v localhost:3000/api/DVT/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/utxos
 ```
 
 ```json
 [
     {
         "_id": "5c34b36069d5562c2fc45b09",
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "mainnet",
         "coinbase": false,
         "mintIndex": 1,
@@ -652,7 +652,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d95
 
 ### Get Wallet UTXOS
 
-GET `/api/BTC/mainnet/wallet/:pubKey/utxos`
+GET `/api/DVT/mainnet/wallet/:pubKey/utxos`
 
 <details>
 <summary><b>Response</b></summary>
@@ -661,14 +661,14 @@ GET `/api/BTC/mainnet/wallet/:pubKey/utxos`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/addresses/missing
+curl -v localhost:3000/api/DVT/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d956b67f25fbf5c1dd4e3766cf85acbc400/addresses/missing
 ```
 
 ```json
 [
     {
         "_id": "5c34b36069d5562c2fc45b09",
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "mainnet",
         "coinbase": false,
         "mintIndex": 1,
@@ -690,7 +690,7 @@ curl -v localhost:3000/api/BTC/mainnet/wallet/02870d8366cf8e50f383e38e5fafc01d95
 
 ### Get Fee by Target
 
-GET `/api/BTC/mainnet/fee/:target`
+GET `/api/DVT/mainnet/fee/:target`
 
 <details>
 <summary><b>Response</b></summary>
@@ -699,7 +699,7 @@ GET `/api/BTC/mainnet/fee/:target`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/fee/80
+curl -v localhost:3000/api/DVT/mainnet/fee/80
 ```
 
 ```json
@@ -715,7 +715,7 @@ curl -v localhost:3000/api/BTC/mainnet/fee/80
 
 ### Get Daily Transactions
 
-GET `/api/BTC/mainnet/stats/daily-transactions`
+GET `/api/DVT/mainnet/stats/daily-transactions`
 
 <details>
 <summary><b>Response</b></summary>
@@ -724,12 +724,12 @@ GET `/api/BTC/mainnet/stats/daily-transactions`
 <b>Use Curl command in terminal to get a response</b>
 
 ```sh
-curl -v localhost:3000/api/BTC/mainnet/stats/daily-transactions
+curl -v localhost:3000/api/DVT/mainnet/stats/daily-transactions
 ```
 
 ```json
 {
-    "chain": "BTC",
+    "chain": "DVT",
     "network": "mainnet",
     "results":
     [
@@ -767,19 +767,19 @@ curl -v localhost:3000/api/status/enabled-chains
 ```json
 [
     {
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "mainnet"
     },
     {
-        "chain": "BTC",
+        "chain": "DVT",
         "network": "testnet"
     },
     {
-        "chain": "DVT",
+        "chain": "BTC",
         "network": "mainnet"
     },
     {
-        "chain": "DVT",
+        "chain": "BTC",
         "network": "testnet"
     }
 ]
